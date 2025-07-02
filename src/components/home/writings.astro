@@ -2,7 +2,7 @@
 import Button from '../button.astro'
 import PostsLoop from '../posts-loop.astro'
 
-const feed = './rss.xml'
+const feed = 'https://blog.aozaki.cc/rss.xml'
 ---
 
 <section class="max-w-4xl mx-auto px-7 lg:px-0">
@@ -48,7 +48,10 @@ const feed = './rss.xml'
             可以通过
             <a class="font-bold" href={`https://www.inoreader.com/feed/${encodeURIComponent(feed)}`}
               >Inoreader</a
-            > 或 <a class="font-bold" href={feed}>RSS</a> 订阅，RSS 地址：
+            > 或 <a
+              class="font-bold"
+              href={`https://feed.aozaki.cc/rss?url=${encodeURIComponent(feed)}`}>RSS.Beauty</a
+            > 订阅，RSS 地址：
           </p>
           <div class="flex flex-col items-center w-full mt-4 space-y-3">
             <input
@@ -57,7 +60,7 @@ const feed = './rss.xml'
               placeholder="Email address"
               aria-label="Email address"
               required=""
-              value={`https://blog.aozaki.cc/rss.xml`}
+              value="feed.aozaki.cc"
               class="w-full h-10 px-3 text-sm border border-dashed rounded-md focus:ring-0 focus:outline-black border-neutral-400 dark:border-neutral-600 dark:bg-neutral-800 dark:placeholder-neutral-400 dark:text-white"
             />
             <button
