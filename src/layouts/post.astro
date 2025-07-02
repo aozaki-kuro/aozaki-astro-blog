@@ -1,18 +1,27 @@
 ---
 import Layout from './main.astro'
-const { frontmatter } = Astro.props
 
-function parseDate(dateStr) {
+/** 文章 frontmatter 的结构 */
+interface Frontmatter {
+  title: string
+  description: string
+  dateFormatted: string
+  image?: string
+}
+
+// 给 Astro.props 声明类型，避免后续再出现隐式 any
+const { frontmatter } = Astro.props as { frontmatter: Frontmatter }
+
+/** 把 "yyyy/mm/dd" 转成 Date */
+function parseDate(dateStr: string): Date {
   const [year, month, day] = dateStr.split('/').map(Number)
   return new Date(year, month - 1, day)
 }
 
-function formatDate(dateStr) {
+/** 把日期格式化成 "yyyy 年 m 月 d 日" */
+function formatDate(dateStr: string): string {
   const date = parseDate(dateStr)
-  const y = date.getFullYear()
-  const m = date.getMonth() + 1
-  const d = date.getDate()
-  return `${y} 年 ${m} 月 ${d} 日`
+  return `${date.getFullYear()} 年 ${date.getMonth() + 1} 月 ${date.getDate()} 日`
 }
 
 const postDate = formatDate(frontmatter.dateFormatted)
