@@ -15,7 +15,6 @@
       alt="astro"
     />
   </a>
-
   <a href="https://workers.cloudflare.com" target="_blank" rel="noopener noreferrer">
     <img
       style="display: inline-block"
