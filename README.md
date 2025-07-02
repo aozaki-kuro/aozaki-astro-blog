@@ -1,13 +1,49 @@
-# Aria Template
+<div align="center">
+  <img
+    src="./public/assets/logo/logo_dark.svg"
+    alt="aozaki's blog"
+    width="50%"
+    height="50%"
+  />
 
-This is a personal blog, portfolio, or blog template created for [Astro](https://astro.build).
+<b>- <em>Yet Another Blog of Aozaki</em> -</b>
 
-Astro port of [aria](https://github.com/static-templates/aria).
+  <a href="https://astro.build" target="_blank" rel="noopener noreferrer">
+    <img
+      style="display: inline-block"
+      src="https://img.shields.io/badge/Astro-BC52EE?logo=astro&style=flat-square&logoColor=fff"
+      alt="astro"
+    />
+  </a>
 
-![Aria Template Cover Photo](https://github.com/ccbikai/astro-aria/blob/main/public/assets/images/cover.png?raw=true)
+  <a href="https://workers.cloudflare.com" target="_blank" rel="noopener noreferrer">
+    <img
+      style="display: inline-block"
+      src="https://img.shields.io/badge/Cloudflare%20Workers-F38020?logo=Cloudflare&logoColor=white&style=flat-square"
+      alt="Cloudflare"
+    />
+  </a>
+  <a href="https://pnpm.io/" target="_blank" rel="noopener noreferrer">
+    <img
+      style="display: inline-block"
+      src="https://img.shields.io/badge/Bun-000?logo=bun&logoColor=fff&style=flat-square"
+      alt="bun"
+    />
+  </a>
 
-You can install this theme with the [Astro](https://astro.build) command like so:
+  <br />
+</div>
 
-```js
-npm create astro@latest -- --template ccbikai/astro-aria
-```
+---
+
+Built with Astro
+
+Deployed on Cloudflare Workers
+
+---
+
+Code and framework released under [Apache 2.0](https://github.com/aozaki-kuro/aozaki-astro-blog/blob/master/LICENSE)
+
+Contents were release under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+Photo / Porfolio _ALL RIGHTS RESERVED_.
