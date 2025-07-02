@@ -1,0 +1,65 @@
+---
+import Footer from '../components/footer.astro'
+import Header from '../components/header.astro'
+import SquareLines from '../components/square-lines.astro'
+
+const DEFAULT_DESCRIPTION =
+  "Aozaki的个人博客，偶尔写点东西。 / Aozaki's blog, writing to record my life and hobbies."
+const DEFAULT_IMAGE = 'https://img.aozaki.cc/twitter-card.jpg'
+
+const { title, description, image } = Astro.props
+const metaDescription = description ?? DEFAULT_DESCRIPTION
+const metaImage = image ?? DEFAULT_IMAGE
+const isArticle = Boolean(description || image)
+
+import '../styles/global.css'
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    {metaDescription && <meta name="description" content={metaDescription} />}
+
+    <!-- Open Graph -->
+    {title && <meta property="og:title" content={title} />}
+    {metaDescription && <meta property="og:description" content={metaDescription} />}
+    {metaImage && <meta property="og:image" content={metaImage} />}
+    {isArticle && <meta property="og:type" content="article" />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    {title && <meta property="twitter:title" content={title} />}
+    {metaDescription && <meta property="twitter:description" content={metaDescription} />}
+    {metaImage && <meta name="twitter:image" content={metaImage} />}
+    <meta property="twitter:site" content="@Aozaki__" />
+
+    <!-- Used to add dark mode right away, adding here prevents any flicker -->
+    <script is:inline>
+      if (typeof Storage !== 'undefined') {
+        if (localStorage.getItem('dark_mode') && localStorage.getItem('dark_mode') == 'true') {
+          document.documentElement.classList.add('dark')
+        }
+      }
+    </script>
+
+    <style>
+      .prose img {
+        border-radius: 20px;
+      }
+    </style>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png" />
+    <script src="../styles/global.css"></script>
+    <Fragment set:html={import.meta.env.HEADER_INJECT} />
+  </head>
+  <body class="antialiased bg-white dark:bg-neutral-900">
+    <SquareLines />
+    <Header />
+    <slot />
+    <Footer />
+    <script src="../assets/js/main.js"></script>
+    <Fragment set:html={import.meta.env.FOOTER_INJECT} />
+  </body>
+</html>
