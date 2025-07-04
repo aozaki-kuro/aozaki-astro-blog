@@ -4,10 +4,12 @@ import PhotoGallery from '../../components/photo-gallery.astro'
 import photo from '../../collections/photo.json'
 
 export async function getStaticPaths() {
-  return (photo as Array<{ title: string; date: string; cover: string; amount: number }>).map(item => ({
-    params: { slug: item.title.toLowerCase() },
-    props: { item },
-  }))
+  return (photo as Array<{ title: string; date: string; cover: string; amount: number }>)
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .map(item => ({
+      params: { slug: item.title.toLowerCase() },
+      props: { item },
+    }))
 }
 
 const { item } = Astro.props
