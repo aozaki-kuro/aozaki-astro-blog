@@ -1,22 +1,22 @@
 ---
-import { getCollection } from 'astro:content'
 import PostLayout from '../../layouts/post.astro'
 import PhotoGallery from '../../components/photo-gallery.astro'
+import { photographyData } from '../../content/photography/photographyData'
 
 export async function getStaticPaths() {
-  const photos = await getCollection('photography')
-  return photos.map(entry => ({
-    params: { slug: entry.slug },
-    props: { entry },
+  return photographyData.map(item => ({
+    params: { slug: item.title.toLowerCase() },
+    props: { item },
   }))
 }
 
-const { entry } = Astro.props
-const { Content } = await entry.render()
-const { title, description, dateFormatted, image } = entry.data
+const { item } = Astro.props
+const title = item.title
+const description = ''
+const dateFormatted = `${item.date.slice(0, 4)}/${item.date.slice(4, 6)}/${item.date.slice(6)}`
+const image = `/assets/images/photography/${item.date}_${item.title.toLowerCase()}/${item.cover}.jpg`
 ---
 
 <PostLayout frontmatter={{ title, description, dateFormatted, image }}>
-  <Content />
   <PhotoGallery title={title} />
 </PostLayout>

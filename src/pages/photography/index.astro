@@ -2,17 +2,13 @@
 import PageHeading from '../../components/page-heading.astro'
 import PhotoCard from '../../components/photo-card.astro'
 import Layout from '../../layouts/main.astro'
-import { getCollection } from 'astro:content'
+import { photographyData } from '../../content/photography/photographyData'
 
-interface Frontmatter {
-  title: string
-  description: string
-  image: string
-}
-
-const photos = (await getCollection('photography')).map(entry => ({
-  slug: entry.slug,
-  ...(entry.data as Frontmatter),
+const photos = photographyData.map(item => ({
+  slug: item.title.toLowerCase(),
+  title: item.title,
+  description: '',
+  image: `/assets/images/photography/${item.date}_${item.title.toLowerCase()}/${item.cover}.jpg`,
 }))
 ---
 

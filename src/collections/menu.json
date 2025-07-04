@@ -5,6 +5,11 @@
   },
 
   {
+    "name": "摄影",
+    "url": "/photography"
+  },
+
+  {
     "name": "关于",
     "url": "/about"
   }
