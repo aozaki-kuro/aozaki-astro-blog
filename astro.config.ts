@@ -10,5 +10,9 @@ import sitemap from '@astrojs/sitemap'
 export default defineConfig({
   site: 'https://blog.aozaki.cc',
   output: 'static',
-  integrations: [tailwind(), icon(), sitemap()],
+  integrations: [
+    tailwind(),
+    icon(),
+    sitemap({ filter: page => page !== 'https://blog.aozaki.cc/photography/' }),
+  ],
 })
