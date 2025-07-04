@@ -1,10 +1,12 @@
 ---
-import { photographyData, type PhotographyInfo } from '../content/photography/photographyData'
+import photo from '../collections/photo.json'
 
 interface Props { title: string }
 const { title } = Astro.props as Props
 
-const data: PhotographyInfo | undefined = photographyData.find(item => item.title === title)
+const data = (photo as Array<{ title: string; date: string; amount: number }>).find(
+  item => item.title === title
+)
 ---
 {!data ? null : (
   <>

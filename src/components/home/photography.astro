@@ -1,14 +1,16 @@
 ---
 import PhotoCard from '../photo-card.astro'
 import Button from '../button.astro'
-import { photographyData } from '../content/photography/photographyData'
+import photo from '../../collections/photo.json'
 
-const photos = photographyData.map(item => ({
-  slug: item.title.toLowerCase(),
-  title: item.title,
-  description: '',
-  image: `/assets/images/photography/${item.date}_${item.title.toLowerCase()}/${item.cover}.jpg`,
-}))
+const photos = (photo as Array<{ title: string; date: string; cover: string }>).map(
+  item => ({
+    slug: item.title.toLowerCase(),
+    title: item.title,
+    description: `${item.date.slice(0, 4)}/${item.date.slice(4, 6)}/${item.date.slice(6)}`,
+    image: `/assets/images/photography/${item.date}_${item.title.toLowerCase()}/${item.cover}.jpg`,
+  })
+)
 ---
 
 <section class="mx-auto max-w-4xl px-7 lg:px-0">

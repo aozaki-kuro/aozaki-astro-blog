@@ -1,10 +1,10 @@
 ---
 import PostLayout from '../../layouts/post.astro'
 import PhotoGallery from '../../components/photo-gallery.astro'
-import { photographyData } from '../../content/photography/photographyData'
+import photo from '../../collections/photo.json'
 
 export async function getStaticPaths() {
-  return photographyData.map(item => ({
+  return (photo as Array<{ title: string; date: string; cover: string; amount: number }>).map(item => ({
     params: { slug: item.title.toLowerCase() },
     props: { item },
   }))
