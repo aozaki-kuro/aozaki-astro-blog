@@ -3,7 +3,7 @@ import PageHeading from '../../components/page-heading.astro'
 import PhotoCard from '../../components/photo-card.astro'
 import Layout from '../../layouts/main.astro'
 
-const modules = import.meta.glob('./*.md', { eager: true })
+const modules = import.meta.glob('../../content/photography/*.md', { eager: true })
 
 interface Frontmatter {
   title: string

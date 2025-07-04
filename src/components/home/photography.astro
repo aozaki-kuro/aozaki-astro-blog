@@ -2,7 +2,7 @@
 import PhotoCard from '../photo-card.astro'
 import Button from '../button.astro'
 
-const modules = import.meta.glob('../../pages/photography/*.md', { eager: true })
+const modules = import.meta.glob('../../content/photography/*.md', { eager: true })
 
 interface Frontmatter {
   title: string
