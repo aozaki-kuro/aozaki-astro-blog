@@ -6,36 +6,60 @@ import { Icon } from 'astro-icon/components'
 <section
   class="border-t border-neutral-200 bg-white text-gray-700 dark:border-neutral-800 dark:bg-neutral-900 sm:mt-20"
 >
-  <div class="container mx-auto flex max-w-7xl flex-col items-center px-7 py-8 sm:flex-row">
-    <div class="-translate-y-[0.1rem]"><Logo /></div>
+  <div class="container mx-auto flex max-w-5xl flex-col items-center px-7 py-8 sm:flex-row">
+    <div class="-translate-y-[0.1rem] py-4"><Logo /></div>
     <p
       class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:mt-0 sm:border-l sm:border-neutral-300 sm:pl-4 dark:sm:border-neutral-700"
     >
       © {new Date().getFullYear()} Aozaki
     </p>
-    <span class="mt-4 inline-flex justify-center space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
+    <span class="mt-4 inline-flex justify-center space-x-2 sm:ml-auto sm:mt-0 sm:justify-start">
       <a
-        href="https://twitter.com/Aozaki__"
+        href="https://s.aozaki.cc/x"
         target="_blank"
         class="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
       >
-        <Icon name="fa6-brands:twitter" title="Twitter" size={24} />
+        <Icon name="tabler:brand-twitter" title="Twitter" size={24} />
       </a>
 
       <a
-        href="https://github.com/aozaki-kuro/"
+        href="https://s.aozaki.cc/gh"
         target="_blank"
         class="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
       >
-        <Icon name="fa6-brands:github" title="GitHub" size={24} />
+        <Icon name="tabler:brand-github" title="GitHub" size={24} />
       </a>
 
       <a
-        href="https://t.me/aozaki_ch"
+        href="https://s.aozaki.cc/tg"
         target="_blank"
         class="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
       >
-        <Icon name="fa6-brands:telegram" title="Telegram" size={26} />
+        <Icon name="tabler:brand-telegram" title="Telegram" size={24} />
+      </a>
+
+      <a
+        href="https://s.aozaki.cc/dc"
+        target="_blank"
+        class="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+      >
+        <Icon name="tabler:brand-discord" title="Discord" size={24} />
+      </a>
+
+      <a
+        href="https://s.aozaki.cc/ms"
+        target="_blank"
+        class="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+      >
+        <Icon name="tabler:brand-mastodon" title="Mastodon" size={24} />
+      </a>
+
+      <a
+        href="mailto:i@aozaki.cc"
+        target="_blank"
+        class="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+      >
+        <Icon name="tabler:mail" title="Mail" size={24} />
       </a>
     </span>
   </div>
