@@ -1,0 +1,22 @@
+---
+import PostLayout from '../../layouts/post.astro'
+import PhotoGallery from '../../components/photo-gallery.astro'
+import photo from '../../collections/photo.json'
+
+export async function getStaticPaths() {
+  return (photo as Array<{ title: string; date: string; cover: string; amount: number }>).map(item => ({
+    params: { slug: item.title.toLowerCase() },
+    props: { item },
+  }))
+}
+
+const { item } = Astro.props
+const title = item.title
+const description = ''
+const dateFormatted = `${item.date.slice(0, 4)}/${item.date.slice(4, 6)}/${item.date.slice(6)}`
+const image = `/assets/images/photography/${item.date}_${item.title.toLowerCase()}/${item.cover}.jpg`
+---
+
+<PostLayout frontmatter={{ title, description, dateFormatted, image }}>
+  <PhotoGallery title={title} />
+</PostLayout>
