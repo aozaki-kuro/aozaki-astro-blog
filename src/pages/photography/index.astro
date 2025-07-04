@@ -1,0 +1,41 @@
+---
+import PageHeading from '../../components/page-heading.astro'
+import PhotoCard from '../../components/photo-card.astro'
+import Layout from '../../layouts/main.astro'
+
+const modules = import.meta.glob('./*.md', { eager: true })
+
+interface Frontmatter {
+  title: string
+  description: string
+  image: string
+}
+
+const photos = Object.entries(modules).map(([path, module]) => {
+  const frontmatter = (module as any).frontmatter as Frontmatter
+  const slug = path.split('/').pop()?.replace(/\.md$/, '') ?? ''
+  return {
+    slug,
+    ...frontmatter,
+  }
+})
+---
+
+<Layout title="Photography">
+  <section class="relative z-20 mx-auto my-12 max-w-2xl px-7 lg:px-0">
+    <PageHeading title="Photography" description="" />
+
+    <div class="z-50 my-8 grid w-full grid-cols-1 items-stretch gap-7 sm:grid-cols-2 sm:gap-5">
+      {
+        photos.map(photo => (
+          <PhotoCard
+            title={photo.title}
+            description={photo.description}
+            image={photo.image}
+            url={`/photography/${photo.slug}`}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>
