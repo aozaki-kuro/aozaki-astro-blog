@@ -9,6 +9,6 @@ import sitemap from '@astrojs/sitemap'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://blog.aozaki.cc',
-
+  output: 'static',
   integrations: [tailwind(), icon(), sitemap()],
 })

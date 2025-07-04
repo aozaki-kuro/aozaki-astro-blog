@@ -1,8 +1,7 @@
 ---
 import PhotoCard from '../photo-card.astro'
 import Button from '../button.astro'
-
-const modules = import.meta.glob('../../content/photography/*.md', { eager: true })
+import { getCollection } from 'astro:content'
 
 interface Frontmatter {
   title: string
@@ -10,14 +9,10 @@ interface Frontmatter {
   image: string
 }
 
-const photos = Object.entries(modules).map(([path, module]) => {
-  const frontmatter = (module as any).frontmatter as Frontmatter
-  const slug = path.split('/').pop()?.replace(/\.md$/, '') ?? ''
-  return {
-    slug,
-    ...frontmatter,
-  }
-})
+const photos = (await getCollection('photography')).map(entry => ({
+  slug: entry.slug,
+  ...(entry.data as Frontmatter),
+}))
 ---
 
 <section class="mx-auto max-w-4xl px-7 lg:px-0">
