@@ -1,0 +1,31 @@
+---
+import { photographyData, type PhotographyInfo } from '../content/photography/photographyData'
+
+interface Props { title: string }
+const { title } = Astro.props as Props
+
+const data: PhotographyInfo | undefined = photographyData.find(item => item.title === title)
+---
+{!data ? null : (
+  <>
+    {Array.from({ length: data.amount }).map((_, index) => {
+      const number = String(index + 1).padStart(4, '0')
+      const lower = data.title.toLowerCase()
+      const src = `/assets/images/photography/${data.date}_${lower}/${number}.jpg`
+      return (
+        <img
+          src={src}
+          alt={`Aozaki © ${data.date.slice(0, 4)}`}
+          loading="lazy"
+          class="mb-4" />
+      )
+    })}
+    <div class="pt-2 text-center text-sm">
+      <p>Copyright © {data.date.slice(0, 4)} Aozaki All rights reserved.</p>
+      <p>[ DO NOT REPOST ]</p>
+      <p>
+        For other photo works, please <a href={`/photography#${data.title.toLowerCase()}`}>Click HERE</a>
+      </p>
+    </div>
+  </>
+)}

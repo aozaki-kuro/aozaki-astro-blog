@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import PostLayout from '../../layouts/post.astro'
+import PhotoGallery from '../../components/photo-gallery.astro'
 
 export async function getStaticPaths() {
   const photos = await getCollection('photography')
@@ -17,4 +18,5 @@ const { title, description, dateFormatted, image } = entry.data
 
 <PostLayout frontmatter={{ title, description, dateFormatted, image }}>
   <Content />
+  <PhotoGallery title={title} />
 </PostLayout>
