@@ -7,6 +7,7 @@
         "@astrojs/rss": "^4.0.12",
         "@astrojs/sitemap": "^3.4.1",
         "@iconify-json/fa6-brands": "^1.2.5",
+        "@iconify-json/tabler": "^1.2.19",
         "astro-icon": "^1.1.5",
         "wrangler": "^4.22.0",
       },
@@ -16,7 +17,7 @@
         "@biomejs/biome": "2.0.6",
         "@tailwindcss/typography": "^0.5.16",
         "astro": "^5.10.2",
-        "prettier": "^3.5.3",
+        "prettier": "^3.6.2",
         "prettier-plugin-astro": "^0.14.1",
         "prettier-plugin-tailwindcss": "^0.6.13",
         "tailwindcss": "^3",
@@ -166,6 +167,8 @@
     "@fastify/busboy": ["@fastify/busboy@2.1.1", "", {}, "sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA=="],
 
     "@iconify-json/fa6-brands": ["@iconify-json/fa6-brands@1.2.5", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-U/iFfziz6jSN9zArOJZYTtoj2tQyh6MxPdI8M84DQ2kEulPaj8j+h9bqvjmzszNHmD7v+kmmKd/MLkMKk+3Zuw=="],
+
+    "@iconify-json/tabler": ["@iconify-json/tabler@1.2.19", "", { "dependencies": { "@iconify/types": "*" } }, "sha512-JDeQTQxHD8KE12pAbPVHX1WFVOPq8D0XfRb/LwYHwGwYE0HP9OIjJ//TKxS1Gt++RirYu6Xsx+Jm5LA5KbykoA=="],
 
     "@iconify/tools": ["@iconify/tools@4.1.2", "", { "dependencies": { "@iconify/types": "^2.0.0", "@iconify/utils": "^2.3.0", "@types/tar": "^6.1.13", "axios": "^1.8.3", "cheerio": "1.0.0", "domhandler": "^5.0.3", "extract-zip": "^2.0.1", "local-pkg": "^0.5.1", "pathe": "^1.1.2", "svgo": "^3.3.2", "tar": "^6.2.1" } }, "sha512-q6NzLQYEN9zkDfcyBqD3vItHcZw97w/s++3H3TBxUORr57EfHxj6tOW6fyufDjMq+Vl56WXWaPx1csBPYlI5CA=="],
 

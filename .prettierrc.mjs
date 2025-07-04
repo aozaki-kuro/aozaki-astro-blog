@@ -9,7 +9,13 @@ const config = {
   trailingComma: 'all',
   arrowParens: 'avoid',
   printWidth: 100,
-  plugins: ['prettier-plugin-tailwindcss', 'prettier-plugin-astro'],
+  plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
+  overrides: [
+    {
+      files: '*.astro',
+      options: { parser: 'astro' },
+    },
+  ],
 }
 
 export default config

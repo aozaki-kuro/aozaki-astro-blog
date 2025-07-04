@@ -7,20 +7,25 @@ import Layout from '../layouts/main.astro'
 ---
 
 <Layout title="About Me">
-  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
-    <PageHeading title="关于" description="👋 我是 Aozaki，常驻上海的心血管内科医生。" />
+  <section class="relative z-20 mx-auto my-12 max-w-2xl px-7 lg:px-0">
+    <PageHeading title="关于" description="" />
 
+    <p
+      class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:text-base sm:leading-7 lg:text-lg lg:leading-8"
+    >
+      👋 我是 Aozaki，常驻上海的心血管内科医生。主攻心脏电生理/心律失常/起搏方向。
+    </p>
     <Image
       src="/assets/images/banner.jpg"
       width="1500"
       height="638"
       alt="banner"
-      class="relative z-30 w-full my-10 rounded-xl"
+      class="relative z-30 my-10 w-full rounded-xl"
     />
 
     <h2 class="mb-2 text-2xl font-bold dark:text-neutral-200"></h2>
     <p
-      class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
+      class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:text-base sm:leading-7 lg:text-lg lg:leading-8"
     >
       上面是我以前的摄影作品。学生时代我非常喜欢拍照和旅行。可惜工作后时间明显减少，不得不放下相机，偶尔才会出来拍拍照。
       <br />
@@ -31,9 +36,14 @@ import Layout from '../layouts/main.astro'
         width="1500"
         height="638"
         alt="My car"
-        class="relative z-30 w-full my-10 rounded-xl"
+        class="relative z-30 my-10 w-full rounded-xl"
       />
       最近呢又喜欢上了开车和对爱车进行升级，也算是新爱好吧。
+      <br />
+      只是这又是一个费钱的爱好，不得不加把劲努力工作还车贷。升级件也好贵呀。
+      <br />
+      <br />
+      偶尔我也会搓搓代码，不间断会更新博客的结构，敬请期待。
     </p>
 
     <!--

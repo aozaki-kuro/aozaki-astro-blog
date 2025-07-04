@@ -8,27 +8,8 @@
 
 <b>- <em>Yet Another Blog of Aozaki</em> -</b>
 
-  <a href="https://astro.build" target="_blank" rel="noopener noreferrer">
-    <img
-      style="display: inline-block"
-      src="https://img.shields.io/badge/Astro-BC52EE?logo=astro&style=flat-square&logoColor=fff"
-      alt="astro"
-    />
-  </a>
-  <a href="https://workers.cloudflare.com" target="_blank" rel="noopener noreferrer">
-    <img
-      style="display: inline-block"
-      src="https://img.shields.io/badge/Cloudflare%20Workers-F38020?logo=Cloudflare&logoColor=white&style=flat-square"
-      alt="Cloudflare"
-    />
-  </a>
-  <a href="https://pnpm.io/" target="_blank" rel="noopener noreferrer">
-    <img
-      style="display: inline-block"
-      src="https://img.shields.io/badge/Bun-000?logo=bun&logoColor=fff&style=flat-square"
-      alt="bun"
-    />
-  </a>
+![Astro](https://img.shields.io/badge/Astro-BC52EE?logo=astro&style=flat-square&logoColor=fff)
+![Cloudflare Workers](https://img.shields.io/badge/Cloudflare%20Workers-F38020?logo=Cloudflare&logoColor=white&style=flat-square)
 
   <br />
 </div>

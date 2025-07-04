@@ -2,14 +2,14 @@
 import SquareLine from './square-line.astro'
 ---
 
-<div class="absolute w-full h-auto" style="z-index:-1">
-  <div class="absolute top-0 left-0 w-1/2 h-auto bg-neutral-100 dark:bg-neutral-800">
+<div class="absolute h-auto w-full" style="z-index:-1">
+  <div class="absolute left-0 top-0 h-auto w-1/2 bg-neutral-100 dark:bg-neutral-800">
     <div
-      class="absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tl from-white dark:from-neutral-900 from-50% via-90% to-100% via-transparent to-transparent"
+      class="pointer-events-none absolute inset-0 z-30 h-full w-full bg-gradient-to-tl from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-neutral-900"
     >
     </div>
     <div
-      class="flex flex-col w-full h-full border-t border-l divide-y divide-dashed divide-neutral-300 dark:divide-neutral-700 border-neutral-300 dark:border-neutral-900"
+      class="flex h-full w-full flex-col divide-y divide-dashed divide-neutral-300 border-l border-t border-neutral-300 dark:divide-neutral-700 dark:border-neutral-900"
     >
       <SquareLine />
       <SquareLine />
@@ -20,13 +20,13 @@ import SquareLine from './square-line.astro'
     </div>
   </div>
 
-  <div class="absolute top-0 right-0 w-1/2 h-auto bg-neutral-100 dark:bg-neutral-800">
+  <div class="absolute right-0 top-0 h-auto w-1/2 bg-neutral-100 dark:bg-neutral-800">
     <div
-      class="absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tr from-white dark:from-neutral-900 from-50% via-90% to-100% via-transparent to-transparent"
+      class="pointer-events-none absolute inset-0 z-30 h-full w-full bg-gradient-to-tr from-white from-50% via-transparent via-90% to-transparent to-100% dark:from-neutral-900"
     >
     </div>
     <div
-      class="flex flex-col w-full h-full border-t border-l divide-y divide-dashed divide-neutral-300 dark:divide-neutral-700 border-neutral-300 dark:border-neutral-900"
+      class="flex h-full w-full flex-col divide-y divide-dashed divide-neutral-300 border-l border-t border-neutral-300 dark:divide-neutral-700 dark:border-neutral-900"
     >
       <SquareLine />
       <SquareLine />
