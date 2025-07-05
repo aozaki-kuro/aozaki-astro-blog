@@ -20,13 +20,14 @@
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.13",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.4.1",
     "@iconify-json/tabler": "^1.2.19",
+    "@tailwindcss/vite": "^4.1.11",
     "astro-icon": "^1.1.5",
     "wrangler": "^4.23.0"
   }

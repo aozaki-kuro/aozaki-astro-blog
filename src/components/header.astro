@@ -21,7 +21,7 @@ import Logo from '../components/logo.astro'
 
 <header id="header" class="absolute top-0 z-50 h-20 w-full">
   <div
-    class="mx-auto flex h-full max-w-5xl select-none items-center justify-between border-b border-l-0 border-r-0 border-transparent pl-6 pr-4 lg:rounded-b-xl lg:border-l lg:border-r"
+    class="mx-auto flex h-full max-w-5xl items-center justify-between border-r-0 border-b border-l-0 border-transparent pr-4 pl-6 select-none lg:rounded-b-xl lg:border-r lg:border-l"
   >
     <Logo />
 
@@ -34,7 +34,7 @@ import Logo from '../components/logo.astro'
     </div>
 
     <nav
-      class="relative z-30 flex flex-row-reverse justify-start text-sm text-neutral-500 dark:text-neutral-400 sm:flex-row sm:justify-end"
+      class="relative z-30 flex flex-row-reverse justify-start text-sm text-neutral-500 sm:flex-row sm:justify-end dark:text-neutral-400"
     >
       <!-- 汉堡按钮 -->
       <div
@@ -55,7 +55,7 @@ import Logo from '../components/logo.astro'
       <!-- 关闭按钮 -->
       <div
         id="closeMenu"
-        class="ml-4 flex hidden h-6 w-6 -translate-x-1 cursor-pointer flex-col items-end justify-center sm:hidden"
+        class="ml-4 hidden h-6 w-6 -translate-x-1 transform-gpu cursor-pointer flex-col items-end justify-center sm:hidden"
       >
         <svg
           class="h-6 w-6 text-neutral-600 dark:text-neutral-200"
@@ -71,9 +71,9 @@ import Logo from '../components/logo.astro'
       <!-- 菜单 -->
       <div
         id="menu"
-        class="dm:mx-0 fixed left-0 top-[75px] z-40 hidden h-auto w-full flex-col items-end justify-start pb-4 pt-7 text-sm duration-300 ease-out sm:relative sm:top-0 sm:flex sm:w-auto sm:flex-row sm:py-0 sm:pr-0 sm:pt-0 sm:text-base sm:text-sm"
+        class="dm:mx-0 fixed top-[75px] left-0 z-40 hidden h-auto w-full flex-col items-end justify-start pt-7 pb-4 text-sm duration-300 ease-out sm:relative sm:top-0 sm:flex sm:w-auto sm:flex-row sm:py-0 sm:pt-0 sm:pr-0 sm:text-sm"
       >
-        <div class="absolute inset-0 right-0 top-0 block h-full w-full px-3 sm:hidden">
+        <div class="absolute inset-0 top-0 right-0 block h-full w-full px-3 sm:hidden">
           <div
             class="relative h-full w-full rounded-xl border border-dashed border-neutral-300 bg-white backdrop-blur-sm dark:border-neutral-700 dark:bg-neutral-900"
           >
@@ -83,7 +83,7 @@ import Logo from '../components/logo.astro'
           menus.map(menu => (
             <a
               href={menu.url}
-              class="relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-neutral-900 dark:hover:text-white sm:mb-0 sm:py-0 md:w-auto"
+              class="relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-neutral-900 sm:mb-0 sm:py-0 md:w-auto dark:hover:text-white"
             >
               {menu.name}
             </a>
