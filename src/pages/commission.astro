@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/commission.astro'
+import Featured from '../components/commission/featured.astro'
+import Stale from '../components/commission/stale.astro'
+import commissions from '../content/commission/commission.json'
+
+interface Item { Character: string }
+const characters: string[] = []
+for (const c of commissions as Item[]) {
+  if (!characters.includes(c.Character)) characters.push(c.Character)
+}
+---
+<Layout>
+  <h2 class="mb-4 text-xl font-bold">Featured</h2>
+  <Featured />
+  {characters.map(character => (
+    <section class="mt-8" id={character}>
+      <h2 class="mb-4 text-xl font-bold">{character}</h2>
+      <Stale character={character} />
+    </section>
+  ))}
+</Layout>

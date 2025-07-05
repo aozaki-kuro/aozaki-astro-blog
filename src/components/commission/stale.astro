@@ -1,0 +1,6 @@
+---
+import List from './list.astro'
+interface Props { character: string }
+const { character } = Astro.props as Props
+---
+<List character={character} />

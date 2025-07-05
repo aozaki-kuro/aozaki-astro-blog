@@ -1,0 +1,17 @@
+---
+import Layout from './main.astro'
+---
+<Layout title="约稿">
+  <main class="relative z-30 mx-auto mt-10 max-w-4xl bg-white pb-1 text-neutral-900 dark:bg-neutral-900 md:rounded-t-md">
+    <div class="relative flex flex-col justify-stretch border-b-0 border-t border-neutral-200 px-5 pt-6 dark:border-neutral-800 md:rounded-t-2xl md:border-l md:border-r md:pt-20 lg:px-0">
+      <div class="absolute left-0 top-0 mt-1 hidden h-full w-px -translate-x-px bg-linear-to-b from-transparent to-white dark:to-neutral-900 md:block"></div>
+      <div class="absolute right-0 top-0 mt-1 hidden h-full w-px translate-x-px bg-linear-to-b from-transparent to-white dark:to-neutral-900 md:block"></div>
+      <h1 class="mx-auto mb-6 w-full max-w-2xl text-left text-3xl font-bold leading-tight tracking-tighter dark:text-neutral-100 md:mb-12 md:text-4xl md:leading-none lg:text-5xl">
+        约稿
+      </h1>
+    </div>
+    <article class="prose prose-sm mx-auto mb-20 w-full max-w-2xl px-7 dark:prose-invert lg:prose-lg lg:px-0">
+      <slot />
+    </article>
+  </main>
+</Layout>
