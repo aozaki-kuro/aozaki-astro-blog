@@ -10,6 +10,11 @@
   },
 
   {
+    "name": "约稿",
+    "url": "/commission"
+  },
+
+  {
     "name": "关于",
     "url": "/about"
   }

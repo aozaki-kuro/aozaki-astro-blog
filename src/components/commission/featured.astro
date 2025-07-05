@@ -1,0 +1,29 @@
+---
+import data from '../../data/commission/commission.json'
+import priority from '../../data/commission/priorityList.json'
+import IllustratorInfo from './illustrator-info.astro'
+import { prepareData } from '../../utils/commission'
+
+interface Item {
+  fileName: string
+  Character: string
+  Featured: boolean
+  Twitter?: string
+  Pixiv?: string
+  Fantia?: string
+  Skeb?: string
+}
+
+const flattened = prepareData(data as Item[], priority as Record<string, number>)
+---
+{flattened.map(commission => (
+  <div>
+      <img
+        src={`/assets/images/commission/${commission.fileName}.jpg`}
+      alt={`${commission.Creator} ©️ ${commission.PublishDate}`}
+      loading="lazy"
+      class="mb-2 rounded-none!"
+    />
+    <IllustratorInfo {...commission} />
+  </div>
+))}
