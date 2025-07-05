@@ -18,8 +18,8 @@ const flattened = prepareData(data as Item[], priority as Record<string, number>
 ---
 {flattened.map(commission => (
   <div key={commission.fileName}>
-    <img
-      src={`/images/commission/${commission.fileName}.jpg`}
+      <img
+        src={`/assets/images/commission/${commission.fileName}.jpg`}
       alt={`${commission.Creator} ©️ ${commission.PublishDate}`}
       loading="lazy"
       class="mb-2 rounded"

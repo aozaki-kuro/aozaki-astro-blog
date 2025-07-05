@@ -1,7 +1,7 @@
 ---
 title: '游记：京都 - 伊势 - 广岛'
 description: '迟来三年的毕业旅行'
-dateFormatted: 2023/5/29
+dateFormatted: 2023/05/29
 image: https://img.aozaki.cc/20230529/L1004554.jpg
 ---
 

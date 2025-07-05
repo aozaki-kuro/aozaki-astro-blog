@@ -1,7 +1,7 @@
 ---
 title: 'BMW 330i 新车 & 升级 Part 2'
 description: '才升级完 KW V3 LE、AP9540，本来没打算升级的轮毂结果也安排上了。'
-dateFormatted: 2025/6/29
+dateFormatted: 2025/06/29
 image: https://img.aozaki.cc/20250629/cover.jpg
 ---
 

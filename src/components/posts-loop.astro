@@ -11,10 +11,10 @@ function parseDate(dateStr: string) {
 
 function formatDate(dateStr: string) {
   const date = parseDate(dateStr)
-  const y = date.getFullYear()
-  const m = date.getMonth() + 1
-  const d = date.getDate()
-  return `${y} 年 ${m} 月 ${d} 日`
+  const y = String(date.getFullYear()).padStart(4, '0')
+  const m = String(date.getMonth() + 1).padStart(2, '0')
+  const d = String(date.getDate()).padStart(2, '0')
+  return `${y}/${m}/${d}`
 }
 
 const sortedPosts = allPosts
@@ -51,7 +51,7 @@ const postsLoop = sortedPosts.slice(0, count).map(post => {
           <p class="text-sm text-neutral-600 dark:text-neutral-400">
             <span>{post.description}</span>
           </p>
-          <div class="mt-2.5 text-xs font-medium text-neutral-600 dark:text-neutral-300">
+          <div class="mt-2.5 text-xs font-medium font-mono text-neutral-600 dark:text-neutral-300">
             {post.dateFormatted}
           </div>
         </div>

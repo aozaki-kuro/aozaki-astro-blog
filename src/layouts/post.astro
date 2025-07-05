@@ -21,7 +21,10 @@ function parseDate(dateStr: string): Date {
 /** 把日期格式化成 "yyyy 年 m 月 d 日" */
 function formatDate(dateStr: string): string {
   const date = parseDate(dateStr)
-  return `${date.getFullYear()} 年 ${date.getMonth() + 1} 月 ${date.getDate()} 日`
+  const y = String(date.getFullYear()).padStart(4, '0')
+  const m = String(date.getMonth() + 1).padStart(2, '0')
+  const d = String(date.getDate()).padStart(2, '0')
+  return `${y}/${m}/${d}`
 }
 
 const postDate = formatDate(frontmatter.dateFormatted)
@@ -48,7 +51,7 @@ const postDate = formatDate(frontmatter.dateFormatted)
         {frontmatter.title}
         <div>
           <time
-            class="text-sm tracking-wide text-neutral-500 dark:text-neutral-400"
+            class="text-sm font-mono tracking-wide text-neutral-500 dark:text-neutral-400"
             datetime="2025-04-23T14:01:48.936Z"
           >
             {postDate}

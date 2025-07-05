@@ -28,8 +28,8 @@ const filtered = (data as Item[])
 ---
 {filtered.map(commission => (
   <div key={commission.Creator + commission.PublishDate}>
-    <img
-      src={`/images/commission/${commission.fileName}.jpg`}
+      <img
+        src={`/assets/images/commission/${commission.fileName}.jpg`}
       alt={`${commission.Creator} ©️ ${commission.PublishDate}`}
       loading="lazy"
       class="mb-2 rounded"
