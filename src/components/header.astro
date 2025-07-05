@@ -1,6 +1,30 @@
 ---
 import { Image } from 'astro:assets'
 import menus from '../collections/menu.json'
+
+/** 当前页面路径（去掉尾斜杠）；根路径保持 '/' */
+const current = (() => {
+  const p = Astro.url.pathname.replace(/\/$/, '')
+  return p === '' ? '/' : p
+})()
+
+/** 统一去掉尾斜杠，根路径保持 '/' */
+const normalize = (url: string) => {
+  const p = url.replace(/\/$/, '')
+  return p === '' ? '/' : p
+}
+
+/** ★★★ 判断菜单是否高亮 ★★★
+ * 1) 精确相等
+ * 2) current 以 menuPath + '/' 开头
+ *    例如菜单 '/post' 时，/post/xxx 也高亮
+ * 3) 根路径仅在 '/' 时高亮
+ */
+const isActive = (menuUrl: string) => {
+  const path = normalize(menuUrl)
+  if (path === '/') return current === '/'
+  return current === path || current.startsWith(path + '/')
+}
 ---
 
 <!-- 立即设定主题，避免闪烁 -->
@@ -23,6 +47,7 @@ import menus from '../collections/menu.json'
   <div
     class="mx-auto flex h-full max-w-5xl select-none items-center justify-between border-b border-l-0 border-r-0 border-transparent pl-6 pr-4 lg:rounded-b-xl lg:border-l lg:border-r"
   >
+    <!-- ========== Logo ========== -->
     <div>
       <a
         href="/"
@@ -47,7 +72,7 @@ import menus from '../collections/menu.json'
       </a>
     </div>
 
-    <!-- 移动端背景遮罩 -->
+    <!-- ========== 移动端背景遮罩 ========== -->
     <div
       id="mobileMenuBackground"
       onclick="closeMobileMenu()"
@@ -55,6 +80,7 @@ import menus from '../collections/menu.json'
     >
     </div>
 
+    <!-- ========== 导航栏 ========== -->
     <nav
       class="relative z-30 flex flex-row-reverse justify-start text-sm text-neutral-500 dark:text-neutral-400 sm:flex-row sm:justify-end"
     >
@@ -70,8 +96,10 @@ import menus from '../collections/menu.json'
           stroke-linejoin="round"
           stroke-width="2"
           viewBox="0 0 24 24"
-          stroke="currentColor"><path d="M4 8h16M4 16h16"></path></svg
+          stroke="currentColor"
         >
+          <path d="M4 8h16M4 16h16"></path>
+        </svg>
       </div>
 
       <!-- 关闭按钮 -->
@@ -86,8 +114,10 @@ import menus from '../collections/menu.json'
           stroke-linejoin="round"
           stroke-width="2"
           viewBox="0 0 24 24"
-          stroke="currentColor"><path d="M6 18L18 6M6 6l12 12"></path></svg
+          stroke="currentColor"
         >
+          <path d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
       </div>
 
       <!-- 菜单 -->
@@ -95,25 +125,36 @@ import menus from '../collections/menu.json'
         id="menu"
         class="dm:mx-0 fixed left-0 top-[75px] z-40 hidden h-auto w-full flex-col items-end justify-start pb-4 pt-7 text-sm duration-300 ease-out sm:relative sm:top-0 sm:flex sm:w-auto sm:flex-row sm:py-0 sm:pr-0 sm:pt-0 sm:text-sm"
       >
+        <!-- 移动端毛玻璃背景 -->
         <div class="absolute inset-0 right-0 top-0 block h-full w-full px-3 sm:hidden">
           <div
             class="relative h-full w-full rounded-xl border border-dashed border-neutral-300 bg-white backdrop-blur-sm dark:border-neutral-700 dark:bg-neutral-900"
           >
           </div>
         </div>
+
         {
-          menus.map(menu => (
-            <a
-              href={menu.url}
-              class="relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-neutral-900 dark:hover:text-white sm:mb-0 sm:py-0 md:w-auto"
-            >
-              {menu.name}
-            </a>
-          ))
+          menus.map(menu => {
+            const active = isActive(menu.url) // ★★★ 改用新逻辑
+            return (
+              <a
+                href={menu.url}
+                aria-current={active ? 'page' : undefined}
+                class:list={[
+                  // 基础样式
+                  'relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-neutral-900 dark:hover:text-white sm:mb-0 sm:py-0 md:w-auto',
+                  // 当前栏目高亮
+                  active && '!text-neutral-900 dark:!text-white',
+                ]}
+              >
+                {menu.name}
+              </a>
+            )
+          })
         }
       </div>
 
-      <!-- 主题切换按钮（仅图标） -->
+      <!-- 主题切换按钮 -->
       <div
         id="darkToggle"
         class="group relative ml-4 flex cursor-pointer items-center pl-6 text-neutral-800 dark:text-white"
@@ -131,10 +172,11 @@ import menus from '../collections/menu.json'
             stroke-width="2"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            ><path
-              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-            ></path></svg
           >
+            <path
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            ></path>
+          </svg>
 
           <!-- 月亮 -->
           <svg
@@ -146,8 +188,9 @@ import menus from '../collections/menu.json'
             stroke-width="2"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            ><path d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z"></path></svg
           >
+            <path d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z"></path>
+          </svg>
         </div>
       </div>
     </nav>
