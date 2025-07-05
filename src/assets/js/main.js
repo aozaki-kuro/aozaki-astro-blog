@@ -159,5 +159,12 @@ window.closeMobileMenu = () => {
   document.getElementById('closeMenu').classList.add('hidden')
   document.getElementById('openMenu').classList.remove('hidden')
   document.getElementById('menu').classList.add('hidden')
-  document.getElementById('mobileMenuBackground').classList.add('hidden')
+  const bg = document.getElementById('mobileMenuBackground')
+  bg.classList.add('opacity-0')
+  const handler = () => {
+    bg.classList.add('hidden')
+    bg.classList.remove('opacity-0')
+    bg.removeEventListener('transitionend', handler)
+  }
+  bg.addEventListener('transitionend', handler, { once: true })
 }
