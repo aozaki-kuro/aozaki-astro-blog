@@ -1,5 +1,14 @@
 ---
-const { title, description, url, image } = Astro.props
+import { Image } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
+
+interface Props {
+  title: string
+  description: string
+  url: string
+  image: ImageMetadata
+}
+const { title, description, url, image } = Astro.props as Props
 ---
 
 <a
@@ -16,7 +25,13 @@ const { title, description, url, image } = Astro.props
     class="relative z-30 block duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1"
   >
     <span class="block w-full">
-      <img src={image} class="aspect-3/2 h-auto w-full rounded-lg object-cover" />
+      <Image
+        src={image}
+        width={image.width}
+        height={image.height}
+        alt={title}
+        class="aspect-3/2 h-auto w-full rounded-lg object-cover"
+      />
     </span>
     <span class="mb-1 mt-5 block w-full px-1 sm:mt-3">
       <span
