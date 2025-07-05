@@ -3,20 +3,30 @@ import Layout from '../layouts/commission.astro'
 import Featured from '../components/commission/featured.astro'
 import Stale from '../components/commission/stale.astro'
 import commissions from '../content/commission/commission.json'
+import charPriority from '../data/commission/characterPriority.json'
 
 interface Item { Character: string }
-const characters: string[] = []
-for (const c of commissions as Item[]) {
-  if (!characters.includes(c.Character)) characters.push(c.Character)
+const characters: { name: string; index: number }[] = []
+for (const [i, c] of (commissions as Item[]).entries()) {
+  if (!characters.some(ch => ch.name === c.Character)) {
+    characters.push({ name: c.Character, index: i })
+  }
 }
+
+characters.sort((a, b) => {
+  const ap = (charPriority as Record<string, number>)[a.name] ?? 0
+  const bp = (charPriority as Record<string, number>)[b.name] ?? 0
+  if (ap !== bp) return bp - ap
+  return a.index - b.index
+})
 ---
 <Layout>
   <h2 class="mb-4 text-xl font-bold">Featured</h2>
   <Featured />
-  {characters.map(character => (
-    <section class="mt-8" id={character}>
-      <h2 class="mb-4 text-xl font-bold">{character}</h2>
-      <Stale character={character} />
+  {characters.map(c => (
+    <section class="mt-8" id={c.name}>
+      <h2 class="mb-4 text-xl font-bold">{c.name}</h2>
+      <Stale character={c.name} />
     </section>
   ))}
 </Layout>
