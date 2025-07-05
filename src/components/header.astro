@@ -1,6 +1,6 @@
 ---
+import { Image } from 'astro:assets'
 import menus from '../collections/menu.json'
-import Logo from '../components/logo.astro'
 ---
 
 <!-- 立即设定主题，避免闪烁 -->
@@ -23,7 +23,29 @@ import Logo from '../components/logo.astro'
   <div
     class="mx-auto flex h-full max-w-5xl items-center justify-between border-r-0 border-b border-l-0 border-transparent pr-4 pl-6 select-none lg:rounded-b-xl lg:border-r lg:border-l"
   >
-    <Logo />
+    <div>
+      <a
+        href="/"
+        class="group relative z-30 flex h-5 items-center space-x-1.5 text-base font-semibold text-black dark:text-white"
+      >
+        <Image
+          src="/assets/logo/logo_light.svg"
+          alt="Logo Light"
+          class="block dark:hidden"
+          width="160"
+          height="29"
+          loading="eager"
+        />
+        <Image
+          src="/assets/logo/logo_dark.svg"
+          alt="Logo Dark"
+          class="hidden dark:block"
+          width="160"
+          height="29"
+          loading="eager"
+        />
+      </a>
+    </div>
 
     <!-- 移动端背景遮罩 -->
     <div
