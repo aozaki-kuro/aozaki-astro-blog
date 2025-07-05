@@ -18,19 +18,22 @@ interface Item {
 
 const flattened = prepareData(data as Item[], priority as Record<string, number>)
 ---
-{flattened.map(commission => {
-  const src = imageImports[commission.fileName]
-  return (
-    <div>
-      <Image
-        src={src}
-        width={src.width}
-        height={src.height}
-        alt={`${commission.Creator} ©️ ${commission.PublishDate}`}
-        loading="lazy"
-        class="mb-2 rounded-none!"
-      />
-      <IllustratorInfo {...commission} />
-    </div>
-  )
-})}
+
+{
+  flattened.map(commission => {
+    const src = imageImports[commission.fileName]
+    return (
+      <div>
+        <Image
+          src={src}
+          width={src.width}
+          height={src.height}
+          alt={`${commission.Creator} ©️ ${commission.PublishDate}`}
+          loading="lazy"
+          class="mb-2 rounded-none!"
+        />
+        <IllustratorInfo {...commission} />
+      </div>
+    )
+  })
+}

@@ -28,19 +28,22 @@ const filtered = (data as Item[])
   .filter(c => c.Character === character && !c.Featured)
   .sort((a, b) => b.PublishDate.localeCompare(a.PublishDate))
 ---
-{filtered.map(commission => {
-  const src = imageImports[commission.fileName]
-  return (
-    <div>
-      <Image
-        src={src}
-        width={src.width}
-        height={src.height}
-        alt={`${commission.Creator} ©️ ${commission.PublishDate}`}
-        loading="lazy"
-        class="mb-2 rounded-none!"
-      />
-      <IllustratorInfo {...commission} />
-    </div>
-  )
-})}
+
+{
+  filtered.map(commission => {
+    const src = imageImports[commission.fileName]
+    return (
+      <div>
+        <Image
+          src={src}
+          width={src.width}
+          height={src.height}
+          alt={`${commission.Creator} ©️ ${commission.PublishDate}`}
+          loading="lazy"
+          class="mb-2 rounded-none!"
+        />
+        <IllustratorInfo {...commission} />
+      </div>
+    )
+  })
+}
