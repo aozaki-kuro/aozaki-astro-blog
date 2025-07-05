@@ -2,21 +2,17 @@ import { defineConfig } from 'astro/config'
 
 import icon from 'astro-icon'
 
-import sitemap from '@astrojs/sitemap'
+import tailwind from '@astrojs/tailwind'
 
-import tailwindcss from '@tailwindcss/vite'
+import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://blog.aozaki.cc',
   output: 'static',
-
   integrations: [
+    tailwind(),
     icon(),
     sitemap({ filter: page => page !== 'https://blog.aozaki.cc/photography/' }),
   ],
-
-  vite: {
-    plugins: [tailwindcss()],
-  },
 })
