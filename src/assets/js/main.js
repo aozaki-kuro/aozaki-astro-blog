@@ -18,6 +18,7 @@ const stickyClassesContainer = [
 const unstickyClassesContainer = ['border-transparent']
 
 let headerElement = null
+let themeTimer = null
 
 document.addEventListener('DOMContentLoaded', () => {
   headerElement = document.getElementById('header')
@@ -99,11 +100,13 @@ function showDay(animate = false) {
     moon.classList.add('setting')
   }
 
-  setTimeout(() => {
+  clearTimeout(themeTimer)
+  themeTimer = setTimeout(() => {
     moon.classList.add('hidden')
     sun.classList.remove('hidden')
     document.documentElement.classList.remove('dark')
     if (animate) sun.classList.add('rising')
+    document.documentElement.classList.remove('duration-300')
   }, timeout)
 }
 
@@ -120,11 +123,13 @@ function showNight(animate = false) {
     sun.classList.add('setting')
   }
 
-  setTimeout(() => {
+  clearTimeout(themeTimer)
+  themeTimer = setTimeout(() => {
     sun.classList.add('hidden')
     moon.classList.remove('hidden')
     document.documentElement.classList.add('dark')
     if (animate) moon.classList.add('rising')
+    document.documentElement.classList.remove('duration-300')
   }, timeout)
 }
 
