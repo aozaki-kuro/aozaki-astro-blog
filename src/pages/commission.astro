@@ -5,7 +5,9 @@ import List from '../components/commission/list.astro'
 import commissions from '../data/commission/commission.json'
 import charPriority from '../data/commission/characterPriority.json'
 
-interface Item { Character: string }
+interface Item {
+  Character: string
+}
 const characters: { name: string; index: number }[] = []
 for (const [i, c] of (commissions as Item[]).entries()) {
   if (!characters.some(ch => ch.name === c.Character)) {
@@ -20,13 +22,16 @@ characters.sort((a, b) => {
   return a.index - b.index
 })
 ---
+
 <Layout>
   <h2 class="mb-4 text-xl font-bold">Featured</h2>
   <Featured />
-  {characters.map(c => (
-    <section class="mt-8" id={c.name}>
-      <h2 class="mb-4 text-xl font-bold">{c.name}</h2>
-      <List character={c.name} />
-    </section>
-  ))}
+  {
+    characters.map(c => (
+      <section class="mt-8" id={c.name}>
+        <h2 class="mb-4 text-xl font-bold">{c.name}</h2>
+        <List character={c.name} />
+      </section>
+    ))
+  }
 </Layout>

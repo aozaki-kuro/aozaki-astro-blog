@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets'
 import data from '../../data/commission/commission.json'
 import IllustratorInfo from './illustrator-info.astro'
+import { imageImports } from '../../data/imageImports'
 
 interface Props {
   character: string
@@ -26,14 +28,22 @@ const filtered = (data as Item[])
   .filter(c => c.Character === character && !c.Featured)
   .sort((a, b) => b.PublishDate.localeCompare(a.PublishDate))
 ---
-{filtered.map(commission => (
-  <div>
-      <img
-        src={`/assets/images/commission/${commission.fileName}.jpg`}
-      alt={`${commission.Creator} ©️ ${commission.PublishDate}`}
-      loading="lazy"
-      class="mb-2 rounded-none!"
-    />
-    <IllustratorInfo {...commission} />
-  </div>
-))}
+
+{
+  filtered.map(commission => {
+    const src = imageImports[commission.fileName]
+    return (
+      <div>
+        <Image
+          src={src}
+          width={src.width}
+          height={src.height}
+          alt={`${commission.Creator} ©️ ${commission.PublishDate}`}
+          loading="lazy"
+          class="mb-2 rounded-none!"
+        />
+        <IllustratorInfo {...commission} />
+      </div>
+    )
+  })
+}

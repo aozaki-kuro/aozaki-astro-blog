@@ -10,33 +10,40 @@ interface Props {
 const { PublishDate, Creator, Twitter, Pixiv, Fantia, Skeb } = Astro.props as Props
 const formattedDate = `${PublishDate.slice(0, 4)}/${PublishDate.slice(4, 6)}/${PublishDate.slice(6, 8)}`
 ---
-<div class="flex flex-auto font-mono text-sm ss:text-xs">
+
+<div class="ss:text-xs flex flex-auto font-mono text-sm">
   <span>{formattedDate}</span>
-  <span class="pr-16 ss:pr-6" />
+  <span class="ss:pr-6 pr-16"></span>
   <span>{Creator || '-'}</span>
   <span class="grow text-right">
-    <span class="pr-3 ss:pr-2" />
+    <span class="ss:pr-2 pr-3"></span>
     {
       !Twitter && !Skeb && !Pixiv && !Fantia ? (
-        <span class="pr-3 ss:pr-2">N/A</span>
+        <span class="ss:pr-2 pr-3">N/A</span>
       ) : (
         <>
           {Twitter && (
             <>
-              <span class="pr-3 ss:pr-2" />
-              <a href={Twitter} class="underline-offset-[0.1rem]" target="_blank">Twitter</a>
+              <span class="ss:pr-2 pr-3" />
+              <a href={Twitter} class="underline-offset-[0.1rem]" target="_blank">
+                Twitter
+              </a>
             </>
           )}
           {Pixiv && (
             <>
-              <span class="pr-3 ss:pr-2" />
-              <a href={Pixiv} class="underline-offset-[0.1rem]" target="_blank">Pixiv</a>
+              <span class="ss:pr-2 pr-3" />
+              <a href={Pixiv} class="underline-offset-[0.1rem]" target="_blank">
+                Pixiv
+              </a>
             </>
           )}
           {Fantia && (
             <>
-              <span class="pr-3 ss:pr-2" />
-              <a href={Fantia} class="underline-offset-[0.1rem]" target="_blank">Fantia</a>
+              <span class="ss:pr-2 pr-3" />
+              <a href={Fantia} class="underline-offset-[0.1rem]" target="_blank">
+                Fantia
+              </a>
             </>
           )}
         </>

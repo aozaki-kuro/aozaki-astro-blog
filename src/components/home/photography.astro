@@ -2,17 +2,18 @@
 import PhotoCard from '../photo-card.astro'
 import Button from '../button.astro'
 import photo from '../../collections/photo.json'
+import { imageImports } from '../../data/imageImports'
 
 const photos = (photo as Array<{ title: string; date: string; cover: string }>).map(item => ({
   slug: item.title.toLowerCase(),
   title: item.title,
   description: `${item.date.slice(0, 4)}/${item.date.slice(4, 6)}/${item.date.slice(6)}`,
-  image: `/assets/images/photography/${item.date}_${item.title.toLowerCase()}/${item.cover}.jpg`,
+  image: imageImports[`${item.date}_${item.title.toLowerCase()}_${item.cover}`],
 }))
 ---
 
 <section class="mx-auto max-w-4xl px-7 lg:px-0">
-  <h2 class="text-2xl font-bold leading-10 tracking-tight text-neutral-900 dark:text-neutral-100">
+  <h2 class="text-2xl leading-10 font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
     摄影
   </h2>
   <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">

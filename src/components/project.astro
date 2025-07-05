@@ -5,7 +5,7 @@ const { name, description, url, image } = Astro.props
 <a
   href={url}
   target="_blank"
-  class="h-auto group relative flex flex-col items-stretch rounded-2xl p-7 duration-300 ease-out sm:p-3"
+  class="group relative flex h-auto flex-col items-stretch rounded-2xl p-7 duration-300 ease-out sm:p-3"
 >
   <span
     class="absolute inset-0 z-20 block h-full w-full rounded-2xl border border-dashed border-transparent bg-transparent duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border group-hover:border-dashed group-hover:border-neutral-300 group-hover:bg-white dark:group-hover:border-neutral-600 dark:group-hover:bg-neutral-900"
@@ -19,7 +19,7 @@ const { name, description, url, image } = Astro.props
     <span class="block w-full">
       <img src={image} class="aspect-video h-auto w-full rounded-lg object-cover" />
     </span>
-    <span class="mb-1 mt-5 block w-full px-1 sm:mt-3">
+    <span class="mt-5 mb-1 block w-full px-1 sm:mt-3">
       <span
         class="mb-0 flex items-center text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100"
       >

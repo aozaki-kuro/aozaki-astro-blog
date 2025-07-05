@@ -1,8 +1,10 @@
 ---
+import { Image } from 'astro:assets'
 import data from '../../data/commission/commission.json'
 import priority from '../../data/commission/priorityList.json'
 import IllustratorInfo from './illustrator-info.astro'
 import { prepareData } from '../../utils/commission'
+import { imageImports } from '../../data/imageImports'
 
 interface Item {
   fileName: string
@@ -16,14 +18,22 @@ interface Item {
 
 const flattened = prepareData(data as Item[], priority as Record<string, number>)
 ---
-{flattened.map(commission => (
-  <div>
-      <img
-        src={`/assets/images/commission/${commission.fileName}.jpg`}
-      alt={`${commission.Creator} ©️ ${commission.PublishDate}`}
-      loading="lazy"
-      class="mb-2 rounded-none!"
-    />
-    <IllustratorInfo {...commission} />
-  </div>
-))}
+
+{
+  flattened.map(commission => {
+    const src = imageImports[commission.fileName]
+    return (
+      <div>
+        <Image
+          src={src}
+          width={src.width}
+          height={src.height}
+          alt={`${commission.Creator} ©️ ${commission.PublishDate}`}
+          loading="lazy"
+          class="mb-2 rounded-none!"
+        />
+        <IllustratorInfo {...commission} />
+      </div>
+    )
+  })
+}
