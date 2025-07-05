@@ -128,7 +128,7 @@ const isActive = (menuUrl: string) => {
         <!-- 移动端毛玻璃背景 -->
         <div class="absolute inset-0 right-0 top-0 block h-full w-full px-3 sm:hidden">
           <div
-            class="relative h-full w-full rounded-xl border border-dashed border-neutral-300 bg-white backdrop-blur-sm dark:border-neutral-700 dark:bg-neutral-900"
+            class="relative h-full w-full rounded-xl border border-dashed border-neutral-300 bg-white backdrop-blur-xs dark:border-neutral-700 dark:bg-neutral-900"
           >
           </div>
         </div>
@@ -144,7 +144,7 @@ const isActive = (menuUrl: string) => {
                   // 基础样式
                   'relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-neutral-900 dark:hover:text-white sm:mb-0 sm:py-0 md:w-auto',
                   // 当前栏目高亮
-                  active && '!text-neutral-900 dark:!text-white',
+                  active && 'text-neutral-900! dark:text-white!',
                 ]}
               >
                 {menu.name}
