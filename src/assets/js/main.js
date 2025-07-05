@@ -99,8 +99,8 @@ function showDay(animate = false) {
     timeout = 500
     moon.classList.add('setting')
   }
-
   clearTimeout(themeTimer)
+  document.documentElement.classList.remove('duration-300')
   themeTimer = setTimeout(() => {
     moon.classList.add('hidden')
     sun.classList.remove('hidden')
@@ -122,8 +122,8 @@ function showNight(animate = false) {
     timeout = 500
     sun.classList.add('setting')
   }
-
   clearTimeout(themeTimer)
+  document.documentElement.classList.remove('duration-300')
   themeTimer = setTimeout(() => {
     sun.classList.add('hidden')
     moon.classList.remove('hidden')
