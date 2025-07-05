@@ -4,12 +4,12 @@ const { logo, dates, role, company, description } = Astro.props
 
 <div class="relative flex flex-col justify-start pl-12">
   <div
-    class="absolute top-0 left-0 z-40 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full border border-neutral-300 bg-white dark:border-neutral-700 dark:bg-neutral-900"
+    class="absolute left-0 top-0 z-40 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full border border-neutral-300 bg-white dark:border-neutral-700 dark:bg-neutral-900"
   >
     <img src={logo} alt={company} class="h-8 w-8" />
   </div>
 
-  <p class="trackign-widest text-xs text-neutral-400 uppercase dark:text-neutral-500">
+  <p class="trackign-widest text-xs uppercase text-neutral-400 dark:text-neutral-500">
     {dates}
   </p>
   <h3 class="my-1 text-lg font-bold dark:text-neutral-100">{role}</h3>

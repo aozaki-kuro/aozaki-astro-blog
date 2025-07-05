@@ -1,8 +1,6 @@
-@import 'tailwindcss';
-
-@plugin "@tailwindcss/typography";
-
-@custom-variant hover (&:hover);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Add Your Custom CSS Here */
 
