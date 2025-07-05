@@ -1,5 +1,16 @@
 // Add your javascript here
 
+declare global {
+  interface Window {
+    darkMode: boolean
+    stickyHeaderFuncionality: () => void
+    evaluateHeaderPosition: () => void
+    applyMenuItemClasses: () => void
+    openMobileMenu: () => void
+    closeMobileMenu: () => void
+  }
+}
+
 window.darkMode = false
 
 // ===== 系统深色方案监测 =====
@@ -17,10 +28,10 @@ const stickyClassesContainer = [
 ]
 const unstickyClassesContainer = ['border-transparent']
 
-let headerElement = null
+let headerElement: HTMLElement | null = null
 
 document.addEventListener('DOMContentLoaded', () => {
-  headerElement = document.getElementById('header')
+  headerElement = document.getElementById('header') as HTMLElement
 
   // 1. 初始化主题
   const stored = localStorage.getItem('dark_mode')
@@ -48,30 +59,33 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // ===================== 粘性页眉 =====================
-window.stickyHeaderFuncionality = () => {
+function stickyHeaderFuncionality() {
   window.addEventListener('scroll', evaluateHeaderPosition)
 }
 
-window.evaluateHeaderPosition = () => {
+function evaluateHeaderPosition() {
+  if (!headerElement) return
+
+  const menu = document.getElementById('menu') as HTMLElement
   if (window.scrollY > 16) {
-    headerElement.firstElementChild.classList.add(...stickyClassesContainer)
-    headerElement.firstElementChild.classList.remove(...unstickyClassesContainer)
+    headerElement.firstElementChild!.classList.add(...stickyClassesContainer)
+    headerElement.firstElementChild!.classList.remove(...unstickyClassesContainer)
     headerElement.classList.add(...stickyClasses)
     headerElement.classList.remove(...unstickyClasses)
-    document.getElementById('menu').classList.add('top-[56px]')
-    document.getElementById('menu').classList.remove('top-[75px]')
+    menu.classList.add('top-[56px]')
+    menu.classList.remove('top-[75px]')
   } else {
-    headerElement.firstElementChild.classList.remove(...stickyClassesContainer)
-    headerElement.firstElementChild.classList.add(...unstickyClassesContainer)
+    headerElement.firstElementChild!.classList.remove(...stickyClassesContainer)
+    headerElement.firstElementChild!.classList.add(...unstickyClassesContainer)
     headerElement.classList.add(...unstickyClasses)
     headerElement.classList.remove(...stickyClasses)
-    document.getElementById('menu').classList.remove('top-[56px]')
-    document.getElementById('menu').classList.add('top-[75px]')
+    menu.classList.remove('top-[56px]')
+    menu.classList.add('top-[75px]')
   }
 }
 
 // ===================== 主题切换按钮 =====================
-document.getElementById('darkToggle').addEventListener('click', () => {
+document.getElementById('darkToggle')!.addEventListener('click', () => {
   document.documentElement.classList.add('duration-300')
 
   if (document.documentElement.classList.contains('dark')) {
@@ -87,8 +101,8 @@ document.getElementById('darkToggle').addEventListener('click', () => {
 
 // ===================== Day / Night 显示辅助 =====================
 function showDay(animate = false) {
-  const sun = document.getElementById('sun')
-  const moon = document.getElementById('moon')
+  const sun = document.getElementById('sun') as HTMLElement
+  const moon = document.getElementById('moon') as HTMLElement
 
   sun.classList.remove('setting')
   moon.classList.remove('rising')
@@ -108,8 +122,8 @@ function showDay(animate = false) {
 }
 
 function showNight(animate = false) {
-  const sun = document.getElementById('sun')
-  const moon = document.getElementById('moon')
+  const sun = document.getElementById('sun') as HTMLElement
+  const moon = document.getElementById('moon') as HTMLElement
 
   moon.classList.remove('setting')
   sun.classList.remove('rising')
@@ -129,8 +143,8 @@ function showNight(animate = false) {
 }
 
 // ===================== 当前页面菜单高亮 =====================
-window.applyMenuItemClasses = () => {
-  const menuItems = document.querySelectorAll('#menu a')
+function applyMenuItemClasses() {
+  const menuItems = document.querySelectorAll<HTMLAnchorElement>('#menu a')
   for (const item of menuItems) {
     if (item.pathname === window.location.pathname) {
       item.classList.add('text-neutral-900', 'dark:text-white')
@@ -140,26 +154,26 @@ window.applyMenuItemClasses = () => {
 
 // ===================== 移动端菜单 =====================
 function mobileMenuFunctionality() {
-  document.getElementById('openMenu').addEventListener('click', openMobileMenu)
-  document.getElementById('closeMenu').addEventListener('click', closeMobileMenu)
+  document.getElementById('openMenu')!.addEventListener('click', openMobileMenu)
+  document.getElementById('closeMenu')!.addEventListener('click', closeMobileMenu)
 }
 
-window.openMobileMenu = () => {
-  document.getElementById('openMenu').classList.add('hidden')
-  document.getElementById('closeMenu').classList.remove('hidden')
-  document.getElementById('menu').classList.remove('hidden')
+function openMobileMenu() {
+  document.getElementById('openMenu')!.classList.add('hidden')
+  document.getElementById('closeMenu')!.classList.remove('hidden')
+  document.getElementById('menu')!.classList.remove('hidden')
 
-  const bg = document.getElementById('mobileMenuBackground')
+  const bg = document.getElementById('mobileMenuBackground') as HTMLElement
   bg.classList.add('opacity-0')
   bg.classList.remove('hidden')
   setTimeout(() => bg.classList.remove('opacity-0'), 1)
 }
 
-window.closeMobileMenu = () => {
-  document.getElementById('closeMenu').classList.add('hidden')
-  document.getElementById('openMenu').classList.remove('hidden')
-  document.getElementById('menu').classList.add('hidden')
-  const bg = document.getElementById('mobileMenuBackground')
+function closeMobileMenu() {
+  document.getElementById('closeMenu')!.classList.add('hidden')
+  document.getElementById('openMenu')!.classList.remove('hidden')
+  document.getElementById('menu')!.classList.add('hidden')
+  const bg = document.getElementById('mobileMenuBackground') as HTMLElement
   bg.classList.add('opacity-0')
   const handler = () => {
     bg.classList.add('hidden')
@@ -168,3 +182,11 @@ window.closeMobileMenu = () => {
   }
   bg.addEventListener('transitionend', handler, { once: true })
 }
+
+window.stickyHeaderFuncionality = stickyHeaderFuncionality
+window.evaluateHeaderPosition = evaluateHeaderPosition
+window.applyMenuItemClasses = applyMenuItemClasses
+window.openMobileMenu = openMobileMenu
+window.closeMobileMenu = closeMobileMenu
+
+export {}
