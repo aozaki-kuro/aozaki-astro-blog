@@ -1,7 +1,7 @@
 ---
 title: '就像眼泪消失在雨中'
 description: 想来也是可怕，人类自己才是最易失去人性的。注意：全篇剧透。
-dateFormatted: 2022/3/3
+dateFormatted: 2022/03/03
 image: https://img.aozaki.cc/20220305/0034.jpg
 ---
 

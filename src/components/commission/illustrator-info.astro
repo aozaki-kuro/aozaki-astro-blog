@@ -1,0 +1,46 @@
+---
+interface Props {
+  PublishDate: string
+  Creator: string
+  Twitter?: string
+  Pixiv?: string
+  Fantia?: string
+  Skeb?: string
+}
+const { PublishDate, Creator, Twitter, Pixiv, Fantia, Skeb } = Astro.props as Props
+const formattedDate = `${PublishDate.slice(0, 4)}/${PublishDate.slice(4, 6)}/${PublishDate.slice(6, 8)}`
+---
+<div class="flex flex-auto font-mono text-sm ss:text-xs">
+  <span>{formattedDate}</span>
+  <span class="pr-16 ss:pr-6" />
+  <span>{Creator || '-'}</span>
+  <span class="grow text-right">
+    <span class="pr-3 ss:pr-2" />
+    {
+      !Twitter && !Skeb && !Pixiv && !Fantia ? (
+        <span class="pr-3 ss:pr-2">N/A</span>
+      ) : (
+        <>
+          {Twitter && (
+            <>
+              <span class="pr-3 ss:pr-2" />
+              <a href={Twitter} class="underline-offset-[0.1rem]" target="_blank">Twitter</a>
+            </>
+          )}
+          {Pixiv && (
+            <>
+              <span class="pr-3 ss:pr-2" />
+              <a href={Pixiv} class="underline-offset-[0.1rem]" target="_blank">Pixiv</a>
+            </>
+          )}
+          {Fantia && (
+            <>
+              <span class="pr-3 ss:pr-2" />
+              <a href={Fantia} class="underline-offset-[0.1rem]" target="_blank">Fantia</a>
+            </>
+          )}
+        </>
+      )
+    }
+  </span>
+</div>

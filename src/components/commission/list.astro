@@ -1,0 +1,39 @@
+---
+import data from '../../content/commission/commission.json'
+import IllustratorInfo from './illustrator-info.astro'
+
+interface Props {
+  character: string
+}
+const { character } = Astro.props as Props
+
+interface Item {
+  fileName: string
+  Character: string
+  Featured: boolean
+  Twitter?: string
+  Pixiv?: string
+  Fantia?: string
+  Skeb?: string
+}
+
+const filtered = (data as Item[])
+  .map(c => ({
+    ...c,
+    PublishDate: c.fileName.slice(0, 8),
+    Creator: c.fileName.split('_')[1],
+  }))
+  .filter(c => c.Character === character && !c.Featured)
+  .sort((a, b) => b.PublishDate.localeCompare(a.PublishDate))
+---
+{filtered.map(commission => (
+  <div>
+      <img
+        src={`/assets/images/commission/${commission.fileName}.jpg`}
+      alt={`${commission.Creator} ©️ ${commission.PublishDate}`}
+      loading="lazy"
+      class="mb-2 rounded-none!"
+    />
+    <IllustratorInfo {...commission} />
+  </div>
+))}
