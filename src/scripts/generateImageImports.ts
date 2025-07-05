@@ -17,8 +17,13 @@ async function main() {
   const commissionDir = join(publicDir, 'commission')
   const photographyDir = join(publicDir, 'photography')
 
-  const commissionFiles = await getFiles(commissionDir)
-  const photographyFiles = await getFiles(photographyDir)
+  const isJpg = (file: string) => {
+    const ext = extname(file).toLowerCase()
+    return ext === '.jpg' || ext === '.jpeg'
+  }
+
+  const commissionFiles = (await getFiles(commissionDir)).filter(isJpg)
+  const photographyFiles = (await getFiles(photographyDir)).filter(isJpg)
 
   const all = [
     ...commissionFiles.map(path => ({ type: 'commission', path })),
