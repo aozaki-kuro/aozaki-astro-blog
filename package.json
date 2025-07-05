@@ -9,7 +9,8 @@
     "dev": "astro dev",
     "format": "prettier --check .",
     "preview": "astro preview",
-    "start": "astro dev"
+    "start": "astro dev",
+    "image-import": "bun run src/scripts/generateImageImports.ts"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.12",
