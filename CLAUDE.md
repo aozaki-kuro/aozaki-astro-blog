@@ -65,7 +65,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Dark/light mode toggle with localStorage persistence
 - System preference detection with `prefers-color-scheme`
 - Animated theme transitions using CSS animations
-- Theme state managed in `src/assets/js/main.js`
+- Theme state managed in `src/assets/js/main.ts`
 
 ### Important Configuration Files
 
@@ -95,7 +95,7 @@ Currently using `@tailwindcss/vite` plugin in `astro.config.ts`. Project has bot
 
 #### Theme Development
 
-- Theme toggle logic in `src/assets/js/main.js`
+- Theme toggle logic in `src/assets/js/main.ts`
 - CSS animations defined in `src/styles/global.css`
 - Dark mode classes follow pattern: `dark:class-name`
 

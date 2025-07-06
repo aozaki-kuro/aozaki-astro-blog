@@ -1,5 +1,18 @@
 // Add your javascript here
 
+declare global {
+  interface Window {
+    darkMode: boolean
+    stickyHeaderFunctionality: () => void
+    evaluateHeaderPosition: () => void
+    applyMenuItemClasses: () => void
+    openMobileMenu: () => void
+    closeMobileMenu: () => void
+  }
+}
+
+export {}
+
 window.darkMode = false
 
 // ===== 系统深色方案监测 =====
@@ -17,11 +30,11 @@ const stickyClassesContainer = [
 ]
 const unstickyClassesContainer = ['border-transparent']
 
-let headerElement = null
-let themeTimer = null
+let headerElement: HTMLElement | null = null
+let themeTimer: ReturnType<typeof setTimeout> | null = null
 
 document.addEventListener('DOMContentLoaded', () => {
-  headerElement = document.getElementById('header')
+  headerElement = document.getElementById('header') as HTMLElement
 
   // 1. 初始化主题
   const stored = localStorage.getItem('dark_mode')
@@ -42,37 +55,37 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   // 其余初始化
-  stickyHeaderFuncionality()
+  stickyHeaderFunctionality()
   applyMenuItemClasses()
   evaluateHeaderPosition()
   mobileMenuFunctionality()
 })
 
 // ===================== 粘性页眉 =====================
-window.stickyHeaderFuncionality = () => {
+window.stickyHeaderFunctionality = () => {
   window.addEventListener('scroll', evaluateHeaderPosition)
 }
 
 window.evaluateHeaderPosition = () => {
   if (window.scrollY > 16) {
-    headerElement.firstElementChild.classList.add(...stickyClassesContainer)
-    headerElement.firstElementChild.classList.remove(...unstickyClassesContainer)
-    headerElement.classList.add(...stickyClasses)
-    headerElement.classList.remove(...unstickyClasses)
-    document.getElementById('menu').classList.add('top-[56px]')
-    document.getElementById('menu').classList.remove('top-[75px]')
+    headerElement!.firstElementChild!.classList.add(...stickyClassesContainer)
+    headerElement!.firstElementChild!.classList.remove(...unstickyClassesContainer)
+    headerElement!.classList.add(...stickyClasses)
+    headerElement!.classList.remove(...unstickyClasses)
+    document.getElementById('menu')!.classList.add('top-[56px]')
+    document.getElementById('menu')!.classList.remove('top-[75px]')
   } else {
-    headerElement.firstElementChild.classList.remove(...stickyClassesContainer)
-    headerElement.firstElementChild.classList.add(...unstickyClassesContainer)
-    headerElement.classList.add(...unstickyClasses)
-    headerElement.classList.remove(...stickyClasses)
-    document.getElementById('menu').classList.remove('top-[56px]')
-    document.getElementById('menu').classList.add('top-[75px]')
+    headerElement!.firstElementChild!.classList.remove(...stickyClassesContainer)
+    headerElement!.firstElementChild!.classList.add(...unstickyClassesContainer)
+    headerElement!.classList.add(...unstickyClasses)
+    headerElement!.classList.remove(...stickyClasses)
+    document.getElementById('menu')!.classList.remove('top-[56px]')
+    document.getElementById('menu')!.classList.add('top-[75px]')
   }
 }
 
 // ===================== 主题切换按钮 =====================
-document.getElementById('darkToggle').addEventListener('click', () => {
+document.getElementById('darkToggle')!.addEventListener('click', () => {
   document.documentElement.classList.add('duration-300')
 
   if (document.documentElement.classList.contains('dark')) {
@@ -87,9 +100,9 @@ document.getElementById('darkToggle').addEventListener('click', () => {
 })
 
 // ===================== Day / Night 显示辅助 =====================
-function showDay(animate = false) {
-  const sun = document.getElementById('sun')
-  const moon = document.getElementById('moon')
+function showDay(animate: boolean = false) {
+  const sun = document.getElementById('sun') as HTMLElement
+  const moon = document.getElementById('moon') as HTMLElement
 
   sun.classList.remove('setting')
   moon.classList.remove('rising')
@@ -110,9 +123,9 @@ function showDay(animate = false) {
   }, timeout)
 }
 
-function showNight(animate = false) {
-  const sun = document.getElementById('sun')
-  const moon = document.getElementById('moon')
+function showNight(animate: boolean = false) {
+  const sun = document.getElementById('sun') as HTMLElement
+  const moon = document.getElementById('moon') as HTMLElement
 
   moon.classList.remove('setting')
   sun.classList.remove('rising')
@@ -135,7 +148,7 @@ function showNight(animate = false) {
 
 // ===================== 当前页面菜单高亮 =====================
 window.applyMenuItemClasses = () => {
-  const menuItems = document.querySelectorAll('#menu a')
+  const menuItems = document.querySelectorAll<HTMLAnchorElement>('#menu a')
   for (const item of menuItems) {
     if (item.pathname === window.location.pathname) {
       item.classList.add('text-neutral-900', 'dark:text-white')
@@ -145,26 +158,26 @@ window.applyMenuItemClasses = () => {
 
 // ===================== 移动端菜单 =====================
 function mobileMenuFunctionality() {
-  document.getElementById('openMenu').addEventListener('click', openMobileMenu)
-  document.getElementById('closeMenu').addEventListener('click', closeMobileMenu)
+  document.getElementById('openMenu')!.addEventListener('click', openMobileMenu)
+  document.getElementById('closeMenu')!.addEventListener('click', closeMobileMenu)
 }
 
 window.openMobileMenu = () => {
-  document.getElementById('openMenu').classList.add('hidden')
-  document.getElementById('closeMenu').classList.remove('hidden')
-  document.getElementById('menu').classList.remove('hidden')
+  document.getElementById('openMenu')!.classList.add('hidden')
+  document.getElementById('closeMenu')!.classList.remove('hidden')
+  document.getElementById('menu')!.classList.remove('hidden')
 
-  const bg = document.getElementById('mobileMenuBackground')
+  const bg = document.getElementById('mobileMenuBackground') as HTMLElement
   bg.classList.add('opacity-0')
   bg.classList.remove('hidden')
   setTimeout(() => bg.classList.remove('opacity-0'), 1)
 }
 
 window.closeMobileMenu = () => {
-  document.getElementById('closeMenu').classList.add('hidden')
-  document.getElementById('openMenu').classList.remove('hidden')
-  document.getElementById('menu').classList.add('hidden')
-  const bg = document.getElementById('mobileMenuBackground')
+  document.getElementById('closeMenu')!.classList.add('hidden')
+  document.getElementById('openMenu')!.classList.remove('hidden')
+  document.getElementById('menu')!.classList.add('hidden')
+  const bg = document.getElementById('mobileMenuBackground') as HTMLElement
   bg.classList.add('opacity-0')
   const handler = () => {
     bg.classList.add('hidden')
