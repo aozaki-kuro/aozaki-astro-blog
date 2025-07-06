@@ -11,7 +11,7 @@ const { PublishDate, Creator, Twitter, Pixiv, Fantia, Skeb } = Astro.props as Pr
 const formattedDate = `${PublishDate.slice(0, 4)}/${PublishDate.slice(4, 6)}/${PublishDate.slice(6, 8)}`
 ---
 
-<div class="flex flex-auto font-mono text-sm sm:text-xs">
+<div class="mb-6 flex flex-auto font-mono text-xs sm:text-sm">
   <span>{formattedDate}</span>
   <span class="pr-16 sm:pr-6"></span>
   <span>{Creator || '-'}</span>
