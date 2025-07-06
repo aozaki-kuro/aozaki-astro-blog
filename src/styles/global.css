@@ -4,6 +4,10 @@
 
 @custom-variant hover (&:hover);
 
+@theme {
+  --font-mono: 'Maple Mono', 'Menlo', 'mono';
+}
+
 @custom-variant dark (&:is(.dark *));
 
 /*
