@@ -6,12 +6,12 @@
     "astro": "astro",
     "build": "astro check && astro build",
     "check": "biome check --apply-unsafe .",
+    "deploy": "astro check && astro build && wrangler deploy",
     "dev": "astro dev",
     "format": "prettier --check .",
-    "preview": "astro preview",
-    "start": "astro dev",
     "image-import": "bun run src/scripts/generateImageImports.ts",
-    "deploy": "astro check && astro build && wrangler deploy"
+    "preview": "astro preview",
+    "start": "astro dev"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.12",
@@ -23,12 +23,12 @@
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.11.0",
     "astro-icon": "^1.1.5",
-    "autoprefixer": "^10.4.21",
-    "cssnano": "^7.0.7",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
+    "@tailwindcss/postcss": "^4.1.11",
+    "autoprefixer": "^10.4.21",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.13",
