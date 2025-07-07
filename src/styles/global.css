@@ -4,8 +4,8 @@
 
 @custom-variant hover (&:hover);
 
-@theme {
-  --font-mono: 'Maple Mono', 'Menlo', 'mono';
+@theme inline {
+  --font-mono: var(--font-maple-mono, 'Menlo', 'sans-serif');
 }
 
 @custom-variant dark (&:is(.dark *));

@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config'
+import { defineConfig, fontProviders } from 'astro/config'
 
 import icon from 'astro-icon'
 
@@ -18,5 +18,17 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+  },
+
+  experimental: {
+    fonts: [
+      {
+        provider: fontProviders.fontsource(),
+        name: 'Maple Mono',
+        cssVariable: '--font-maple-mono',
+        subsets: ['latin'],
+        weights: [400],
+      },
+    ],
   },
 })

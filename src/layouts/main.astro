@@ -1,4 +1,5 @@
 ---
+import { Font } from 'astro:assets'
 import Footer from '../components/footer.astro'
 import Header from '../components/header.astro'
 import SquareLines from '../components/square-lines.astro'
@@ -11,8 +12,6 @@ const { title, description, image } = Astro.props
 const metaDescription = description ?? DEFAULT_DESCRIPTION
 const metaImage = image ?? DEFAULT_IMAGE
 const isArticle = Boolean(description || image)
-
-import '@fontsource/maple-mono'
 
 import '../styles/global.css'
 ---
@@ -40,6 +39,9 @@ import '../styles/global.css'
 
     <!-- Sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Font -->
+    <Font cssVariable="--font-maple-mono" preload />
 
     <script is:inline async src="https://sight.aozaki.cc/app.js" data-domain="blog.aozaki.cc"
     ></script>
