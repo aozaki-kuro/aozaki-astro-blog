@@ -96,3 +96,9 @@ html.dark {
     transform: translate3d(0, 10, 0);
   }
 }
+
+@media screen and (min-device-pixel-ratio: 1.5), screen and (min-resolution: 1.5dppx) {
+  body {
+    @apply antialiased;
+  }
+}
