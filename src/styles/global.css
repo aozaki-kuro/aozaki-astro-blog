@@ -107,3 +107,8 @@ a.delay-link *,
 [data-delay-link] * {
   -webkit-tap-highlight-color: transparent;
 }
+
+/* Hide default focus ring on delayed links */
+a.delay-link:focus {
+  outline: none;
+}
