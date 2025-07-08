@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   applyMenuItemClasses()
   evaluateHeaderPosition()
   mobileMenuFunctionality()
+  enableDelayedNavigation()
 })
 
 // ===================== 粘性页眉 =====================
@@ -172,4 +173,23 @@ window.closeMobileMenu = () => {
     bg.removeEventListener('transitionend', handler)
   }
   bg.addEventListener('transitionend', handler, { once: true })
+}
+
+window.enableDelayedNavigation = () => {
+  const links = document.querySelectorAll('a.delay-link, [data-delay-link]')
+  for (const link of links) {
+    link.addEventListener('click', e => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+      e.preventDefault()
+      link.focus()
+      setTimeout(() => {
+        const href = link.getAttribute('href') || link.dataset.href
+        if (link.target === '_blank') {
+          window.open(href, '_blank')
+        } else {
+          window.location.href = href
+        }
+      }, 300)
+    })
+  }
 }
