@@ -142,7 +142,7 @@ const isActive = (menuUrl: string) => {
                 aria-current={active ? 'page' : undefined}
                 class:list={[
                   // 基础样式
-                  'relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-neutral-900 sm:mb-0 sm:py-0 md:w-auto dark:hover:text-white',
+                  'relative flex w-full items-center justify-center px-3 py-2 text-center font-medium tracking-wide duration-200 ease-out hover:text-neutral-900 focus:text-neutral-900 active:text-neutral-900 sm:mb-0 sm:py-0 md:w-auto dark:hover:text-white dark:focus:text-white dark:active:text-white',
                   // 当前栏目高亮
                   active && 'text-neutral-900! dark:text-white!',
                 ]}
@@ -160,7 +160,7 @@ const isActive = (menuUrl: string) => {
         class="group relative ml-4 flex cursor-pointer items-center pl-6 text-neutral-800 dark:text-white"
       >
         <div
-          class="horizon absolute left-0 flex h-6 w-6 items-center justify-center overflow-hidden border-b border-transparent group-hover:border-neutral-600"
+          class="horizon absolute left-0 flex h-6 w-6 items-center justify-center overflow-hidden border-b border-transparent group-hover:border-neutral-600 group-focus:border-neutral-600 group-active:border-neutral-600"
         >
           <!-- 太阳 -->
           <svg
