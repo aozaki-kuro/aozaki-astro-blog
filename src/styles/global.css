@@ -99,3 +99,9 @@ html.dark {
     @apply antialiased;
   }
 }
+
+/* Remove iOS tap highlight on interactive cards */
+a.delay-link,
+[data-delay-link] {
+  -webkit-tap-highlight-color: transparent;
+}
