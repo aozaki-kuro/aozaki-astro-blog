@@ -13,7 +13,11 @@ export default defineConfig({
 
   integrations: [
     icon(),
-    sitemap({ filter: page => page !== 'https://blog.aozaki.cc/photography/' }),
+    sitemap({
+      filter: page => {
+        return !new URL(page).pathname.startsWith('/photography/')
+      },
+    }),
   ],
 
   vite: {
@@ -27,6 +31,7 @@ export default defineConfig({
         name: 'Maple Mono',
         cssVariable: '--font-maple-mono',
         subsets: ['latin'],
+        styles: ['normal'],
         weights: [400],
       },
     ],
