@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import menus from '../collections/menu.json'
+import { Icon } from 'astro-icon/components'
 
 /** 当前页面路径（去掉尾斜杠）；根路径保持 '/' */
 const current = (() => {
@@ -89,17 +90,7 @@ const isActive = (menuUrl: string) => {
         id="openMenu"
         class="ml-4 flex h-6 w-6 cursor-pointer flex-col items-end justify-center sm:hidden"
       >
-        <svg
-          class="h-8 w-8 dark:text-neutral-200"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M4 8h16M4 16h16"></path>
-        </svg>
+        <Icon name="tabler:menu" class="h-8 w-8 dark:text-neutral-200" />
       </div>
 
       <!-- 关闭按钮 -->
@@ -107,17 +98,7 @@ const isActive = (menuUrl: string) => {
         id="closeMenu"
         class="ml-4 hidden h-6 w-6 -translate-x-1 transform-gpu cursor-pointer flex-col items-end justify-center sm:hidden"
       >
-        <svg
-          class="h-6 w-6 text-neutral-600 dark:text-neutral-200"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
+        <Icon name="tabler:x" class="h-6 w-6 text-neutral-600 dark:text-neutral-200" />
       </div>
 
       <!-- 菜单 -->
@@ -128,7 +109,7 @@ const isActive = (menuUrl: string) => {
         <!-- 移动端毛玻璃背景 -->
         <div class="absolute inset-0 top-0 right-0 block h-full w-full px-3 sm:hidden">
           <div
-            class="relative h-full w-full rounded-xl border border-dashed border-neutral-300 bg-white backdrop-blur-xs dark:border-neutral-700 dark:bg-neutral-900"
+            class="relative h-full w-full rounded-xl border border-dashed border-neutral-300 bg-white backdrop-blur-sm dark:border-neutral-700 dark:bg-neutral-900"
           >
           </div>
         </div>
@@ -163,34 +144,20 @@ const isActive = (menuUrl: string) => {
           class="horizon absolute left-0 flex h-6 w-6 items-center justify-center overflow-hidden border-b border-transparent group-hover:border-neutral-600"
         >
           <!-- 太阳 -->
-          <svg
+          <Icon
+            name="tabler:sun"
+            title="Sun"
             id="sun"
             class="ease absolute block h-6 w-6 transform transition duration-700 dark:hidden"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-            ></path>
-          </svg>
+          />
 
           <!-- 月亮 -->
-          <svg
+          <Icon
+            name="tabler:moon"
+            title="Moon"
             id="moon"
             class="ease absolute hidden h-6 w-6 transform transition duration-700 dark:block"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z"></path>
-          </svg>
+          />
         </div>
       </div>
     </nav>
