@@ -3,26 +3,28 @@ import Layout from './main.astro'
 ---
 
 <Layout title="约稿">
-  <main
-    class="relative z-30 mx-auto mt-10 max-w-4xl bg-white pb-1 text-neutral-900 md:rounded-t-md dark:bg-neutral-900"
-  >
-    <div
-      class="relative flex flex-col justify-stretch border-t border-b-0 border-neutral-200 px-5 pt-6 md:rounded-t-2xl md:border-r md:border-l md:pt-20 lg:px-0 dark:border-neutral-800"
+  <main class="flex-1 pb-6 md:pb-8">
+    <section
+      class="relative z-30 mx-auto mt-10 max-w-4xl bg-white pb-1 md:rounded-t-md dark:bg-neutral-900"
     >
       <div
-        class="absolute top-0 left-0 mt-1 hidden h-full w-px -translate-x-px bg-linear-to-b from-transparent to-white md:block dark:to-neutral-900"
+        class="relative flex flex-col justify-stretch border-t border-b-0 border-neutral-200 px-5 pt-6 md:rounded-t-2xl md:border-r md:border-l md:pt-20 lg:px-0 dark:border-neutral-800"
       >
+        <div
+          class="absolute top-0 left-0 mt-1 hidden h-full w-px -translate-x-px bg-linear-to-b from-transparent to-white md:block dark:to-neutral-900"
+        >
+        </div>
+        <div
+          class="absolute top-0 right-0 mt-1 hidden h-full w-px translate-x-px bg-linear-to-b from-transparent to-white md:block dark:to-neutral-900"
+        >
+        </div>
+        <h1
+          class="mx-auto mb-6 w-full max-w-2xl text-left text-3xl leading-tight font-bold tracking-tight md:mb-12 md:text-4xl md:leading-none lg:text-5xl dark:text-neutral-100"
+        >
+          约稿
+        </h1>
       </div>
-      <div
-        class="absolute top-0 right-0 mt-1 hidden h-full w-px translate-x-px bg-linear-to-b from-transparent to-white md:block dark:to-neutral-900"
-      >
-      </div>
-      <h1
-        class="mx-auto mb-6 w-full max-w-2xl text-left text-3xl leading-tight font-bold tracking-tighter md:mb-12 md:text-4xl md:leading-none lg:text-5xl dark:text-neutral-100"
-      >
-        约稿
-      </h1>
-    </div>
+    </section>
     <article
       class="prose lg:prose-lg dark:prose-invert mx-auto mb-8 w-full max-w-2xl px-5 md:mb-10 md:px-0"
     >
