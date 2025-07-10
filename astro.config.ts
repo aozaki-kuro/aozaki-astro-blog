@@ -22,6 +22,9 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    ssr: {
+      noExternal: process.env.DOCKER ? true : undefined,
+    },
   },
 
   experimental: {
