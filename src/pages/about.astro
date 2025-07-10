@@ -7,49 +7,50 @@ import Layout from '../layouts/main.astro'
 ---
 
 <Layout title="About Me">
-  <section class="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 lg:px-8">
-    <PageHeading
-      title="关于"
-      description="👋 我是 Aozaki，常驻上海的心血管内科医生。主攻心脏电生理/心律失常/起搏方向。"
-    />
+  <main class="flex-1 pb-6 md:pb-8">
+    <div class="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 lg:px-8">
+      <PageHeading
+        title="关于"
+        description="👋 我是 Aozaki，常驻上海的心血管内科医生。主攻心脏电生理/心律失常/起搏方向。"
+      />
 
-    <Image
-      src="/assets/images/banner.jpg"
-      width="1500"
-      height="638"
-      alt="banner"
-      class="relative z-30 my-10 w-full rounded-xl"
-    />
-
-    <h2 class="mb-2 text-2xl font-bold dark:text-neutral-200"></h2>
-    <p
-      class="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7 lg:text-lg lg:leading-8 dark:text-neutral-400"
-    >
-      上面是我以前的摄影作品。学生时代我非常喜欢拍照和旅行。
-      <br />
-      可惜工作后时间明显减少，不得不放下相机，偶尔才会出来拍拍照。
-      <br />
-      <br />
-      现在更多时间会用在看电影、阅读和享受音乐上。
-      <br />
-      受够了门诊的喧嚣和窝在手术室出不来的烦恼之后，这些爱好成为了我的救赎。
-      <br />
       <Image
-        src="/assets/images/car.jpg"
+        src="/assets/images/banner.jpg"
         width="1500"
         height="638"
-        alt="My car"
+        alt="banner"
         class="relative z-30 my-10 w-full rounded-xl"
       />
-      最近呢又喜欢上了开车和对爱车进行升级，也算是新爱好吧。
-      <br />
-      只是这又是一个费钱的爱好，不得不加把劲努力工作还车贷。升级件也好贵呀。
-      <br />
-      <br />
-      偶尔我也会搓搓代码，不间断会更新博客的结构，敬请期待。
-    </p>
 
-    <!--
+      <h2 class="mb-2 text-2xl font-bold dark:text-neutral-200"></h2>
+      <p
+        class="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7 lg:text-lg lg:leading-8 dark:text-neutral-400"
+      >
+        上面是我以前的摄影作品。学生时代我非常喜欢拍照和旅行。
+        <br />
+        可惜工作后时间明显减少，不得不放下相机，偶尔才会出来拍拍照。
+        <br />
+        <br />
+        现在更多时间会用在看电影、阅读和享受音乐上。
+        <br />
+        受够了门诊的喧嚣和窝在手术室出不来的烦恼之后，这些爱好成为了我的救赎。
+        <br />
+        <Image
+          src="/assets/images/car.jpg"
+          width="1500"
+          height="638"
+          alt="My car"
+          class="relative z-30 my-10 w-full rounded-xl"
+        />
+        最近呢又喜欢上了开车和对爱车进行升级，也算是新爱好吧。
+        <br />
+        只是这又是一个费钱的爱好，不得不加把劲努力工作还车贷。升级件也好贵呀。
+        <br />
+        <br />
+        偶尔我也会搓搓代码，不间断会更新博客的结构，敬请期待。
+      </p>
+
+      <!--
     <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">Experience</h2>
     <div class="px-5 py-10">
       {
@@ -86,5 +87,6 @@ import Layout from '../layouts/main.astro'
     </p>
 
      -->
-  </section>
+    </div>
+  </main>
 </Layout>
