@@ -1,0 +1,38 @@
+---
+import friends from '../../data/friends.json'
+---
+
+<section class="mx-auto my-14 w-full max-w-4xl px-7 lg:px-0">
+  <h2 class="text-2xl leading-10 font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+    网上邻居
+  </h2>
+  <p class="my-1 text-sm text-neutral-600 dark:text-neutral-400">新朋友，老朋友</p>
+
+  <div class="mt-7 grid w-full grid-cols-1 items-stretch gap-4 md:grid-cols-3">
+    {
+      friends.map(friend => (
+        <a
+          href={friend.link}
+          title={friend.name}
+          target="_blank"
+          class="group relative w-full p-4 text-sm leading-5 tracking-tight text-neutral-900 duration-300 ease-out dark:text-neutral-100"
+        >
+          <span class="absolute inset-0 z-20 block h-full w-full rounded-2xl border border-dashed border-transparent bg-transparent duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border group-hover:border-dashed group-hover:border-neutral-300 group-hover:bg-white dark:group-hover:border-neutral-600 dark:group-hover:bg-neutral-900" />
+
+          <span class="absolute inset-0 z-10 block h-full w-full rounded-2xl border border-dashed border-neutral-300 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 dark:border-neutral-600" />
+
+          <span class="relative z-30 flex w-full items-center duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
+            <img
+              class="mr-2 h-5 w-5 flex-shrink-0 rounded-full dark:bg-slate-100 dark:p-0.5 dark:brightness-75"
+              loading="lazy"
+              decoding="async"
+              src={`/assets/favicon/${friend.favicon}`}
+              alt={`${friend.name} 的网站图标`}
+            />
+            <span class="min-w-0 flex-1 truncate">{friend.name}</span>
+          </span>
+        </a>
+      ))
+    }
+  </div>
+</section>
