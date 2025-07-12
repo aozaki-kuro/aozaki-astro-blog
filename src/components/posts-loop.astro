@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 const allPosts = await getCollection('post')
 
-const { count } = Astro.props
+const { count, page, perPage } = Astro.props
 
 function parseDate(dateStr: string) {
   const [year, month, day] = dateStr.split('/').map(Number)
@@ -24,7 +24,16 @@ const sortedPosts = allPosts
   }))
   .sort((a, b) => b.date.getTime() - a.date.getTime())
 
-const postsLoop = sortedPosts.slice(0, count).map(post => {
+let start = 0
+let end = sortedPosts.length
+if (typeof page === 'number' && typeof perPage === 'number') {
+  start = (page - 1) * perPage
+  end = start + perPage
+} else if (typeof count === 'number') {
+  end = count
+}
+
+const postsLoop = sortedPosts.slice(start, end).map(post => {
   return {
     ...(post.data || {}),
     dateFormatted: formatDate(post.data.dateFormatted),
