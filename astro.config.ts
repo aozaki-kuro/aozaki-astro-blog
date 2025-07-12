@@ -15,16 +15,22 @@ export default defineConfig({
     icon(),
     sitemap({
       filter: page => {
-        return !new URL(page).pathname.startsWith('/photography/')
+        const { pathname } = new URL(page)
+
+        // 用一组正则来描述所有“黑名单”路径
+        const blocked: RegExp[] = [
+          /^\/photography\//, // 整个目录
+          /^\/post\/subscription-lower-price\/?$/, // 指定文章
+        ]
+
+        // 只要命中其中一个正则，就过滤掉
+        return !blocked.some(re => re.test(pathname))
       },
     }),
   ],
 
   vite: {
     plugins: [tailwindcss()],
-    ssr: {
-      noExternal: process.env.DOCKER ? true : undefined,
-    },
   },
 
   experimental: {
