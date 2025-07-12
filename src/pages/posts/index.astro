@@ -3,7 +3,8 @@ import PageHeading from '../../components/page-heading.astro'
 import PostsLoop from '../../components/posts-loop.astro'
 import Layout from '../../layouts/main.astro'
 
-export const PER_PAGE = 5
+export const PER_PAGE = 10
+
 const page = 1
 import { getCollection } from 'astro:content'
 const totalPages = Math.ceil((await getCollection('post')).length / PER_PAGE)

@@ -4,7 +4,7 @@ import PostsLoop from '../../components/posts-loop.astro'
 import Layout from '../../layouts/main.astro'
 import { getCollection } from 'astro:content'
 
-export const PER_PAGE = 5
+import { PER_PAGE } from './index.astro'
 
 export async function getStaticPaths() {
   const total = (await getCollection('post')).length
