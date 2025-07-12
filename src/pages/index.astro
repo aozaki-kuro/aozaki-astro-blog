@@ -4,12 +4,12 @@
 import { Image } from 'astro:assets'
 import Separator from '../components/home/separator.astro'
 import Writings from '../components/home/writings.astro'
-import Friends from '../components/home/Friends.astro'
+import Friends from '../components/home/friends.astro'
 import Layout from '../layouts/main.astro'
 ---
 
 <Layout title="Aozaki's blog">
-  <div class="relative z-20 mx-auto mt-16 w-full max-w-4xl px-7 md:mt-24 lg:mt-32 xl:px-0">
+  <div class="relative z-20 mx-auto mt-16 flex w-full max-w-4xl px-7 md:mt-24 lg:mt-32 xl:px-0">
     <div class="flex flex-col items-center md:flex-row">
       <div class="relative w-full md:w-1/2">
         <h1 class="mb-5 text-4xl leading-tight font-bold md:text-4xl lg:text-6xl dark:text-white">
@@ -52,8 +52,5 @@ import Layout from '../layouts/main.astro'
   <Separator text="友情链接" />
   <Friends />
 
-  <!--
-  <Separator text="Check out my photography" />
-  <Photography />
-  -->
+  <span class="mb-6"></span>"
 </Layout>

@@ -1,12 +1,17 @@
 [
   {
-    "name": "Willin Wang",
-    "link": "https://willin.wang",
-    "favicon": "willin.ico"
+    "name": "Nyk Ma",
+    "link": "https://nyk.ma",
+    "favicon": "nykma.ico"
   },
   {
-    "name": "I'm Kai",
-    "link": "https://kaiyi.cool",
-    "favicon": "kai.ico"
+    "name": "NovaDNG Studio",
+    "link": "https://novadng.studio",
+    "favicon": "nova.png"
+  },
+  {
+    "name": "Sebastian Luo",
+    "link": "https://big.sb",
+    "favicon": "luo.ico"
   }
 ]
