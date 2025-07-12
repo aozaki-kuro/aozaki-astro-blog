@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 const allPosts = await getCollection('post')
 
-const { count } = Astro.props
+const { count, page, perPage } = Astro.props
 
 function parseDate(dateStr: string) {
   const [year, month, day] = dateStr.split('/').map(Number)
@@ -24,7 +24,16 @@ const sortedPosts = allPosts
   }))
   .sort((a, b) => b.date.getTime() - a.date.getTime())
 
-const postsLoop = sortedPosts.slice(0, count).map(post => {
+let start = 0
+let end = sortedPosts.length
+if (typeof page === 'number' && typeof perPage === 'number') {
+  start = (page - 1) * perPage
+  end = start + perPage
+} else if (typeof count === 'number') {
+  end = count
+}
+
+const postsLoop = sortedPosts.slice(start, end).map(post => {
   return {
     ...(post.data || {}),
     dateFormatted: formatDate(post.data.dateFormatted),
@@ -40,8 +49,8 @@ const postsLoop = sortedPosts.slice(0, count).map(post => {
         class="group relative rounded-2xl border border-dashed border-transparent p-4"
         onclick={`location.href = '${post.link}'`}
       >
-        <div class="absolute inset-0 z-20 h-full w-full rounded-2xl border border-dashed border-neutral-300 bg-white duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 dark:border-neutral-600 dark:bg-neutral-900" />
-        <div class="absolute inset-0 z-10 h-full w-full rounded-2xl border border-dashed border-neutral-300 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 dark:border-neutral-600" />
+        <div class="absolute inset-0 z-20 h-full w-full rounded-2xl border border-dashed border-neutral-300 bg-white duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 dark:border-neutral-700 dark:bg-neutral-900" />
+        <div class="absolute inset-0 z-10 h-full w-full rounded-2xl border border-dashed border-neutral-300 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 dark:border-neutral-700" />
         <div class="relative z-30 cursor-pointer duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
           <h2 class="mb-3 flex items-center dark:text-neutral-100">
             <a href={post.link} class="text-base font-bold tracking-tight sm:text-lg">

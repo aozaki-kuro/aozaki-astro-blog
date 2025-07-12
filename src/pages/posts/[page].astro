@@ -1,0 +1,61 @@
+---
+import PageHeading from '../../components/page-heading.astro'
+import PostsLoop from '../../components/posts-loop.astro'
+import Layout from '../../layouts/main.astro'
+import { getCollection } from 'astro:content'
+
+import { PER_PAGE } from './index.astro'
+
+export async function getStaticPaths() {
+  const total = (await getCollection('post')).length
+  const totalPages = Math.ceil(total / PER_PAGE)
+  return Array.from({ length: totalPages }).map((_, i) => ({
+    params: { page: String(i + 1) },
+    props: { page: i + 1, totalPages },
+  }))
+}
+
+const { page, totalPages } = Astro.props
+---
+
+<Layout title="博客">
+  <main class="flex-1 pb-6 md:pb-8">
+    <div class="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 lg:px-8">
+      <PageHeading title="博客" description="" />
+
+      <div class="space-y-6"><PostsLoop page={page} perPage={PER_PAGE} /></div>
+
+      <nav class="mt-8 flex items-center justify-between pt-6">
+        <div class="flex w-full justify-between">
+          {
+            page > 1 ? (
+              <a
+                href={`/posts/${page - 1}`}
+                class="flex items-center rounded-xl border border-dashed border-neutral-300 p-2 text-xs text-neutral-900 dark:border-neutral-700 dark:text-neutral-100"
+              >
+                上一页
+              </a>
+            ) : (
+              <div />
+            )
+          }
+          <div class="flex items-center text-xs text-neutral-600 dark:text-neutral-400">
+            <span>第 {page} 页，共 {totalPages} 页</span>
+          </div>
+          {
+            page < totalPages ? (
+              <a
+                href={`/posts/${page + 1}`}
+                class="flex items-center rounded-xl border border-dashed border-neutral-300 p-2 text-xs text-neutral-900 dark:border-neutral-700 dark:text-neutral-100"
+              >
+                下一页
+              </a>
+            ) : (
+              <div />
+            )
+          }
+        </div>
+      </nav>
+    </div>
+  </main>
+</Layout>

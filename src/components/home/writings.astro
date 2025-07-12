@@ -5,7 +5,7 @@ import PostsLoop from '../posts-loop.astro'
 const feed = 'https://blog.aozaki.cc/rss.xml'
 ---
 
-<section class="mx-auto max-w-4xl px-7 lg:px-0">
+<section class="mx-auto max-w-4xl px-7 lg:px-0 pb-8">
   <h2 class="text-2xl leading-10 font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
     博客
   </h2>
@@ -14,7 +14,7 @@ const feed = 'https://blog.aozaki.cc/rss.xml'
   <div class="mx-auto my-7 w-full max-w-4xl xl:px-0">
     <div class="flex flex-col items-start justify-start md:flex-row md:space-x-7">
       <div class="w-full space-y-7 md:w-2/3">
-        <PostsLoop count="5" />
+        <PostsLoop count={5} />
 
         <div class="flex w-full items-center justify-center py-5">
           <Button text="查看更多文章" link="/posts" />
@@ -24,7 +24,7 @@ const feed = 'https://blog.aozaki.cc/rss.xml'
         <form
           method="get"
           action={feed}
-          class="rounded-2xl border border-dashed border-neutral-300 p-6 dark:border-neutral-600"
+          class="rounded-2xl border border-dashed border-neutral-300 p-6 dark:border-neutral-700"
         >
           <div class="relative flex items-center space-x-2">
             <svg
@@ -61,7 +61,7 @@ const feed = 'https://blog.aozaki.cc/rss.xml'
               aria-label="Email address"
               required=""
               value="feed.aozaki.cc"
-              class="h-10 w-full rounded-md border border-dashed border-neutral-400 px-3 text-sm focus:ring-0 focus:outline-black dark:border-neutral-600 dark:bg-neutral-800 dark:text-white dark:placeholder-neutral-400"
+              class="h-10 w-full rounded-md border border-dashed border-neutral-400 px-3 text-sm focus:ring-0 focus:outline-black dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:placeholder-neutral-400"
             />
             <button
               type="submit"
