@@ -4,9 +4,8 @@ import PostsLoop from '../../components/posts-loop.astro'
 import Layout from '../../layouts/main.astro'
 import { getCollection } from 'astro:content'
 
-const perPage = 5
-
 export async function getStaticPaths() {
+  const perPage = 5
   const total = (await getCollection('post')).length
   const totalPages = Math.ceil(total / perPage)
   return Array.from({ length: totalPages }).map((_, i) => ({
@@ -16,6 +15,7 @@ export async function getStaticPaths() {
 }
 
 const { page, totalPages } = Astro.props
+const perPage = 5
 ---
 
 <Layout title="博客">

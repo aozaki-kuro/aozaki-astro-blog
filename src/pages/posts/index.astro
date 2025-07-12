@@ -3,10 +3,11 @@ import PageHeading from '../../components/page-heading.astro'
 import PostsLoop from '../../components/posts-loop.astro'
 import Layout from '../../layouts/main.astro'
 
-const perPage = 5
+const PER_PAGE = 5
 const page = 1
 import { getCollection } from 'astro:content'
-const totalPages = Math.ceil((await getCollection('post')).length / perPage)
+const totalPages = Math.ceil((await getCollection('post')).length / PER_PAGE)
+const perPage = PER_PAGE
 ---
 
 <Layout title="博客">
