@@ -36,7 +36,12 @@ const { page, totalPages } = Astro.props
                 上一页
               </a>
             ) : (
-              <div />
+              <a
+                aria-hidden="true"
+                class="pointer-events-none invisible flex items-center rounded-xl border border-dashed border-neutral-300 p-2 text-xs"
+              >
+                上一页
+              </a>
             )
           }
           <div class="flex items-center text-xs text-neutral-600 dark:text-neutral-400">
@@ -51,7 +56,12 @@ const { page, totalPages } = Astro.props
                 下一页
               </a>
             ) : (
-              <div />
+              <a
+                aria-hidden="true"
+                class="pointer-events-none invisible flex items-center rounded-xl border border-dashed border-neutral-300 p-2 text-xs"
+              >
+                下一页
+              </a>
             )
           }
         </div>
