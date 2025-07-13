@@ -19,15 +19,27 @@ const totalPages = Math.ceil((await getCollection('post')).length / PER_PAGE)
 
       <nav class="mt-8 flex items-center justify-between pt-6">
         <div class="flex w-full justify-between">
-          <div></div>
+          <a
+            aria-hidden="true"
+            class="pointer-events-none invisible flex items-center rounded-xl border border-dashed border-neutral-300 p-2 text-xs"
+          >
+            上一页
+          </a>
           <div class="flex items-center text-xs text-neutral-600 dark:text-neutral-400">
             <span>第 {page} 页，共 {totalPages} 页</span>
           </div>
           {
-            totalPages > 1 && (
+            totalPages > 1 ? (
               <a
                 href={`/posts/${page + 1}`}
                 class="flex items-center rounded-xl border border-dashed border-neutral-300 p-2 text-xs text-neutral-900 dark:border-neutral-700 dark:text-neutral-100"
+              >
+                下一页
+              </a>
+            ) : (
+              <a
+                aria-hidden="true"
+                class="pointer-events-none invisible flex items-center rounded-xl border border-dashed border-neutral-300 p-2 text-xs"
               >
                 下一页
               </a>
