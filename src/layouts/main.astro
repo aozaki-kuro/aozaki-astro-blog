@@ -77,7 +77,7 @@ import '../styles/global.css'
     <Header />
     <slot />
     <Footer />
-    <script src="../assets/js/main.js"></script>
+    <script type="module" src="../assets/js/main.ts"></script>
     <Fragment set:html={import.meta.env.FOOTER_INJECT} />
   </body>
 </html>
