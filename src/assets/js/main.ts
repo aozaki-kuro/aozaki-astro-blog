@@ -61,11 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // ===================== 粘性页眉 =====================
-window.stickyHeaderFuncionality = () => {
+function stickyHeaderFuncionality() {
   window.addEventListener('scroll', evaluateHeaderPosition)
 }
+window.stickyHeaderFuncionality = stickyHeaderFuncionality
 
-window.evaluateHeaderPosition = () => {
+function evaluateHeaderPosition() {
   if (!headerElement) return
   if (window.scrollY > 16) {
     headerElement.firstElementChild?.classList.add(...stickyClassesContainer)
@@ -83,6 +84,7 @@ window.evaluateHeaderPosition = () => {
     document.getElementById('menu')?.classList.add('top-[75px]')
   }
 }
+window.evaluateHeaderPosition = evaluateHeaderPosition
 
 // ===================== 主题切换按钮 =====================
 document.getElementById('darkToggle')?.addEventListener('click', () => {
@@ -143,7 +145,7 @@ function showNight(animate = false) {
 }
 
 // ===================== 当前页面菜单高亮 =====================
-window.applyMenuItemClasses = () => {
+function applyMenuItemClasses() {
   const menuItems = document.querySelectorAll<HTMLAnchorElement>('#menu a')
   for (const item of menuItems) {
     if (item.pathname === window.location.pathname) {
@@ -151,6 +153,7 @@ window.applyMenuItemClasses = () => {
     }
   }
 }
+window.applyMenuItemClasses = applyMenuItemClasses
 
 // ===================== 移动端菜单 =====================
 function mobileMenuFunctionality() {
@@ -158,7 +161,7 @@ function mobileMenuFunctionality() {
   document.getElementById('closeMenu')?.addEventListener('click', closeMobileMenu)
 }
 
-window.openMobileMenu = () => {
+function openMobileMenu() {
   document.getElementById('openMenu')?.classList.add('hidden')
   document.getElementById('closeMenu')?.classList.remove('hidden')
   document.getElementById('menu')?.classList.remove('hidden')
@@ -168,10 +171,12 @@ window.openMobileMenu = () => {
   bg?.classList.remove('hidden')
   setTimeout(() => bg?.classList.remove('opacity-0'), 1)
 }
+window.openMobileMenu = openMobileMenu
 
-window.closeMobileMenu = () => {
+function closeMobileMenu() {
   document.getElementById('closeMenu')?.classList.add('hidden')
   document.getElementById('openMenu')?.classList.remove('hidden')
   document.getElementById('menu')?.classList.add('hidden')
   document.getElementById('mobileMenuBackground')?.classList.add('hidden')
 }
+window.closeMobileMenu = closeMobileMenu
