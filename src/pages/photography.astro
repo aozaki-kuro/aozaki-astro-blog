@@ -1,9 +1,9 @@
 ---
-import PageHeading from '../components/page-heading.astro'
-import PhotoCard from '../components/photo-card.astro'
-import Layout from '../layouts/main.astro'
-import photo from '../collections/photo.json'
-import { imageImports } from '../data/imageImports'
+import PageHeading from '@/components/page-heading.astro'
+import PhotoCard from '@/components/photo-card.astro'
+import Layout from '@/layouts/main.astro'
+import photo from '@/collections/photo.json'
+import { imageImports } from '@/data/imageImports'
 
 const photos = (photo as Array<{ title: string; date: string; cover: string }>)
   .sort((a, b) => a.date.localeCompare(b.date))

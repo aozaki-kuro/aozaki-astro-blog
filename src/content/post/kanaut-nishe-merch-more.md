@@ -18,7 +18,7 @@ After posting [the previous article](./kanaut-nishe-merch) on my blog, one of my
 
 And here comes the print I have dreamed of for a long time!
 
-![0001](../../../public/assets/images/20221217/0001.jpg)
+![0001](@assets/images/20221217/0001.jpg)
 
 Above is the fine art print produced at the end of 2020 to celebrate the launch of the light novel "[異世界迷宮の最深部を目指そう](https://www.amazon.co.jp/dp/4865548254)" Vol.15. The fascinating part is Ukai-sensei signed on it! But unfortunately, I got occupied by my Master's thesis and the COVID-19 pandemic, so I never had the chance to purchase one.
 
@@ -34,9 +34,9 @@ From the description [Ukai-sensei wrote on pixiv](https://www.pixiv.net/artworks
 
 Honestly, I have no idea what this character's name is, and I have never read a single word of the novel. Everything I love is the character design and the illustration itself. But considering how much love Ukai-sensei poured into it, I would consider reading it on Kindle with my poor Japanese.
 
-![0002](../../../public/assets/images/20221217/0002.jpg)
+![0002](@assets/images/20221217/0002.jpg)
 
-![0003](../../../public/assets/images/20221217/0003.jpg)
+![0003](@assets/images/20221217/0003.jpg)
 
 I also ordered the polishing cloth designed by Ukai-sensei. The design refers to the concept of [Kanaut Airlines](https://twitter.com/ukaisaki/status/1541606179650301953). I love the color and design. It also perfectly fits the role of taking care of Ukai-sensei's precious signed prints.
 
@@ -46,13 +46,13 @@ Here's the other fine art print I got in December. I was searching frantically o
 
 The digital version is available on [Pixiv](https://www.pixiv.net/artworks/63528913).
 
-![0004](../../../public/assets/images/20221217/0004.jpg)
+![0004](@assets/images/20221217/0004.jpg)
 
 It was from the light novel "[異世界拷問姫](https://mfbunkoj.jp/product/goumonhime/321703000340.html)". The illustration was the cover image of Vol.4, and the title was _Unholy Orange_. I was choosing from all nine versions and decided to buy this at first glance.
 
 The character design was elegant and mysterious. It was said that the character was born from the death and last wishes of the departed. According to [the introduction movie](https://www.youtube.com/watch?v=yfZ-kKjtKbU) on KADOKAWA Official Channel, the background was all gravestones. The gravestones had 48 different kinds of designs and were paired with 24 types of flowers. All of these were carefully drawn one after one. Ukai-sensei said it was the most time-consuming illustration of all time.
 
-![0005](../../../public/assets/images/20221217/0005.jpg)
+![0005](@assets/images/20221217/0005.jpg)
 
 By the way, I love Ukai-sensei's signature. It's like a traditional name stamp, unlike the more common fancy hand-written cursive design. The signature is pretty easy to recognize, and you can also feel its strength. Because of this, I once thought Ukai-sensei was a male, but I was proven wrong.
 
@@ -62,7 +62,7 @@ Ukai-sensei also talked about her signature in her [last drawing stream in 2022]
 
 But it would be too stupid to only have one cleaning cloth sent back here. So I bought a pouch having Nishe-chan on it.
 
-![0006](../../../public/assets/images/20221217/0006.jpg)
+![0006](@assets/images/20221217/0006.jpg)
 
 The design originates from Ukai-sensei's work named ["時代を着る"](https://twitter.com/ukaisaki/status/1175013512696848384). The illustration was also the first time Kanaut Nishe gained her design.
 

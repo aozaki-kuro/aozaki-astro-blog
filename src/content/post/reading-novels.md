@@ -6,7 +6,7 @@ author: Aozaki
 image: https://img.aozaki.cc/20201010/0001.jpg
 ---
 
-![cover](../../../public/assets/images/20201012/0001.jpg)
+![cover](@assets/images/20201012/0001.jpg)
 
 注意：**本文含有剧透**
 

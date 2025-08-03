@@ -18,18 +18,18 @@ description: 'S-ICD与ICD的临床效果评价。新技术真的让生命更安�
 ---
 
 首先复习一下 ICD 的植入指征[^1]：
-![ICD-indications](../../../public/assets/images/20200814/0001.jpg)
+![ICD-indications](@assets/images/20200814/0001.jpg)
 
 根据上图可知，主要植入 ICD 的患者包括冠状动脉疾病（CAD, coronary artery disease）[^2]合并有左室射血分数下降（LVEF, left ventricular ejection fraction）的患者、心源性猝死（VT、VF）生还者。
 
 而目前常用的 ICD 为经静脉植入型号，如 Medtronic EVERA™ ICD 等。经静脉植入的 ICD，主机位于胸前区、锁骨下方 2cm 左右的皮下囊袋内，导线入路通常为锁骨下静脉或头静脉[^3]。
-![ICD-implantation](../../../public/assets/images/20200814/0002.jpg)
+![ICD-implantation](@assets/images/20200814/0002.jpg)
 
 这一入路技术开展多年，血管穿刺非常成熟，但是面临着术后感染、感染性心内膜炎、心脏瓣膜赘生物等术后并发症；严重时该并发症可致心肌穿孔或患者死亡，或是导致导线失效，进而在 VT/VF 时不能识别及除颤[^1]。
 
 Boston Scientific 在 2010 年推出了全皮下植入 ICD[^4]，这一 ICD 的优势在于它的创面更小，且全部位于皮下，不进入静脉，显著降低了血管穿刺并发症、全身血流感染风险以及严重的心脏并发症（心肌穿孔、心包填塞）等等。
 
-![S-ICD-implantation](../../../public/assets/images/20200814/0003.jpg)
+![S-ICD-implantation](@assets/images/20200814/0003.jpg)
 
 但是，由于传统的经静脉 ICD 是直接向心肌释放除颤能量，因此可能具有更好的 VT/VF 识别率，以及更低的除颤能量，因此 S-ICD 一直以来备受质疑。
 
@@ -58,9 +58,9 @@ Boston Scientific 在 2010 年推出了全皮下植入 ICD[^4]，这一 ICD 的�
 5. 因心衰住院
 6. 分配设备交叉
 
-![result1](../../../public/assets/images/20200814/0004.jpg)
-![result2](../../../public/assets/images/20200814/0005.jpg)
-![result2](../../../public/assets/images/20200814/0005.jpg)
+![result1](@assets/images/20200814/0004.jpg)
+![result2](@assets/images/20200814/0005.jpg)
+![result2](@assets/images/20200814/0005.jpg)
 
 研究结果大体上可以认为 S-ICD 非劣效于 ICD，因为在主要终点事件的发生数量相当，植入装置相关的并发症更少。
 

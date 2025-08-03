@@ -1,8 +1,8 @@
 ---
-import PhotoCard from '../photo-card.astro'
-import Button from '../button.astro'
-import photo from '../../collections/photo.json'
-import { imageImports } from '../../data/imageImports'
+import PhotoCard from '@/components/photo-card.astro'
+import Button from '@/components/button.astro'
+import photo from '@/collections/photo.json'
+import { imageImports } from '@/data/imageImports'
 
 const photos = (photo as Array<{ title: string; date: string; cover: string }>).map(item => ({
   slug: item.title.toLowerCase(),

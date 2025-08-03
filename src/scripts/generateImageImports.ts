@@ -36,7 +36,19 @@ async function main() {
   const mappingLines: string[] = []
 
   all.forEach((file, index) => {
-    const rel = relative(join(process.cwd(), 'src', 'data'), file.path).replace(/\\/g, '/')
+    // 修改这里：生成使用别名的路径
+    const publicAssetsDir = join(process.cwd(), 'public', 'assets')
+    let importPath = ''
+
+    if (file.path.startsWith(publicAssetsDir)) {
+      // 使用 @assets 别名
+      const relativePath = relative(publicAssetsDir, file.path).replace(/\\/g, '/')
+      importPath = `@assets/${relativePath}`
+    } else {
+      // 回退到相对路径（如果文件不在 public/assets 目录下）
+      importPath = relative(join(process.cwd(), 'src', 'data'), file.path).replace(/\\/g, '/')
+    }
+
     let key = ''
     if (file.type === 'commission') {
       key = basename(file.path, extname(file.path))
@@ -50,7 +62,7 @@ async function main() {
       }
     }
     const varName = `img${index}`
-    importLines.push(`import ${varName} from '${rel}'`)
+    importLines.push(`import ${varName} from '${importPath}'`)
     mappingLines.push(`  '${key}': ${varName},`)
   })
 

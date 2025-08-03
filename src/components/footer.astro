@@ -2,8 +2,8 @@
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 
-import LogoLight from '../../public/assets/logo/logo_light.svg'
-import LogoDark from '../../public/assets/logo/logo_dark.svg'
+import LogoLight from '@assets/logo/logo_light.svg'
+import LogoDark from '@assets/logo/logo_dark.svg'
 ---
 
 <section
@@ -16,18 +16,8 @@ import LogoDark from '../../public/assets/logo/logo_dark.svg'
         href="/"
         class="group relative z-30 flex h-5 items-center space-x-1.5 text-base font-semibold text-black dark:text-white"
       >
-        <Image
-          src={LogoLight}
-          alt="Logo Light"
-          class="block dark:hidden w-36"
-          loading="eager"
-        />
-        <Image
-          src={LogoDark}
-          alt="Logo Dark"
-          class="hidden dark:block w-36"
-          loading="eager"
-        />
+        <Image src={LogoLight} alt="Logo Light" class="block w-36 dark:hidden" loading="eager" />
+        <Image src={LogoDark} alt="Logo Dark" class="hidden w-36 dark:block" loading="eager" />
       </a>
     </div>
 

@@ -1,11 +1,13 @@
 ---
-// import Button from '../components/button.astro'
-// import Photography from '../components/home/photography.astro'
+// import Button from '@/components/button.astro'
+// import Photography from '@/components/home/photography.astro'
 import { Image } from 'astro:assets'
-import Separator from '../components/home/separator.astro'
-import Writings from '../components/home/writings.astro'
-import Friends from '../components/home/friends.astro'
-import Layout from '../layouts/main.astro'
+import Separator from '@/components/home/separator.astro'
+import Writings from '@/components/home/writings.astro'
+import Friends from '@/components/home/friends.astro'
+import Layout from '@/layouts/main.astro'
+
+import Avatar from '@assets/images/photo.jpg'
 ---
 
 <Layout title="Aozaki's blog">
@@ -33,12 +35,10 @@ import Layout from '../layouts/main.astro'
       >
         <div class="relative z-50 w-1/2">
           <Image
-            src="/assets/images/photo.jpg"
+            src={Avatar}
             loading="eager"
             decoding="auto"
             alt="Aozaki's Avatar"
-            width={300}
-            height={300}
             class="relative z-30 mx-auto w-full rounded-2xl md:max-w-md dark:-translate-y-0.5"
           />
         </div>

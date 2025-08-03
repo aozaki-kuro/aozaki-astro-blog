@@ -6,7 +6,7 @@ author: Aozaki
 image: https://img.aozaki.cc/20200805/0001.jpg
 ---
 
-![cover](../../../public/assets/images/20200805/0001.jpg)
+![cover](@assets/images/20200805/0001.jpg)
 
 虽然说昨天就已经顺利建立了 Hexo + NexT 的博客，并且好不容易动手写完了久违的一篇博客，并且想写下一点点迷思。
 

@@ -15,11 +15,11 @@ author: Aozaki
 
 感兴趣的读者可以 **[点击这里](https://pockies.github.io/2020/01/09/av-data-capture-jellyfin-kodi/)** 学习如何整理。
 
-![片库](../../../public/assets/images/20200811/0002.jpg '嗯，很整齐，很美观，满足强迫症和整理癖的需求')
+![片库](@assets/images/20200811/0002.jpg '嗯，很整齐，很美观，满足强迫症和整理癖的需求')
 
 然而当我点开放置 Pixiv Downloader 批量拖下来的图片库时…我就感到不适。
 
-![node_modules](../../../public/assets/images/20200811/0001.jpg '这就是我的感受')
+![node_modules](@assets/images/20200811/0001.jpg '这就是我的感受')
 
 由于整个图库文件夹实在过于积重难返，加上出现了用 Resilo Sync 在多台电脑之间选择性同步的需求，遂下定决心将图库文件夹进行一次重构。
 
@@ -127,7 +127,7 @@ PxDownloader/${userName} (${userId})/${id}_p${page} #复数档案
 
 这么多问题，一个个手动就很蛋疼。于是我采用了`ReNamer`，进行批量序列化的操作。
 
-![renamer](../../../public/assets/images/20200811/0003.jpg)
+![renamer](@assets/images/20200811/0003.jpg)
 
 1.程序界面与结果预览；2.删除扩展名以外的文件名；
 

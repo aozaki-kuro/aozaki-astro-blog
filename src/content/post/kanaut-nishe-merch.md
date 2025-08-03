@@ -30,23 +30,23 @@ Pixiv Factory is doing a pretty good job on presenting very high quality merch b
 
 ### Fine Art Print
 
-![Fine Art Print](../../../public/assets/images/20221109/0005.jpg)
+![Fine Art Print](@assets/images/20221109/0005.jpg)
 
-![Fine Art Print](../../../public/assets/images/20221109/0006.jpg)
+![Fine Art Print](@assets/images/20221109/0006.jpg)
 
-![Fine Art Print](../../../public/assets/images/20221109/0007.jpg)
+![Fine Art Print](@assets/images/20221109/0007.jpg)
 
 I chose two editions of these. I chose the A4 size over A3 because of limited room space, but I am still planning to buy 1 copy of A3 edition later.
 
 Pixiv Factory might already have experience after holding solo exhibitions for illustrators. The prints are pretty well adjusted, with no visible color issues or wrong color space (e.g., printing the sRGB files in CMYK mode without calibration).
 
-![Fine Art Print](../../../public/assets/images/20221109/0008.jpg)
+![Fine Art Print](@assets/images/20221109/0008.jpg)
 
 ### Mug cup
 
-![Mug cup 1](../../../public/assets/images/20221109/0001.jpg)
+![Mug cup 1](@assets/images/20221109/0001.jpg)
 
-![Mug cup 2](../../../public/assets/images/20221109/0002.jpg)
+![Mug cup 2](@assets/images/20221109/0002.jpg)
 
 The mug cup is of regular size, approximately 10cm in height. Ukai-sensei painted the illustration on August 28th’s stream. I certainly love the original picture, and thankfully, Pixiv Factory seemed to be able to preserve the details.
 
@@ -54,9 +54,9 @@ Ah by the way, this is the first edition with the misspell **L**ANAUT instead of
 
 ### Acrylic Figure
 
-![Acrylic Figure](../../../public/assets/images/20221109/0003.jpg)
+![Acrylic Figure](@assets/images/20221109/0003.jpg)
 
-![Acrylic Figure](../../../public/assets/images/20221109/0004.jpg)
+![Acrylic Figure](@assets/images/20221109/0004.jpg)
 
 Honestly, I hesitated before buying this acrylic figure. It was double the regular price of the typical 7-8cm in height. But after reading the description, I found out that this one is 16cm in height, coupled with an extensive, rounded well-designed base. Plus, Ukai-sensei’s illustration, it’s all worth the price!
 
