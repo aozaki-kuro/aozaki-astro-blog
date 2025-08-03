@@ -1,7 +1,7 @@
 ---
-import PostLayout from '../../layouts/post.astro'
-import PhotoGallery from '../../components/photo-gallery.astro'
-import photo from '../../collections/photo.json'
+import PostLayout from '@/layouts/post.astro'
+import PhotoGallery from '@/components/photo-gallery.astro'
+import photo from '@/collections/photo.json'
 
 export async function getStaticPaths() {
   return (photo as Array<{ title: string; date: string; cover: string; amount: number }>)
