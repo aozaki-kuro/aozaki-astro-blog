@@ -3,6 +3,9 @@ import { Image } from 'astro:assets'
 import menus from '../collections/menu.json'
 import { Icon } from 'astro-icon/components'
 
+import LogoLight from '../../public/assets/logo/logo_light.svg'
+import LogoDark from '../../public/assets/logo/logo_dark.svg'
+
 /** 当前页面路径（去掉尾斜杠）；根路径保持 '/' */
 const current = (() => {
   const p = Astro.url.pathname.replace(/\/$/, '')
@@ -54,22 +57,8 @@ const isActive = (menuUrl: string) => {
         href="/"
         class="group relative z-30 flex h-5 items-center space-x-1.5 text-base font-semibold text-black dark:text-white"
       >
-        <Image
-          src="/assets/logo/logo_light.svg"
-          alt="Logo Light"
-          class="block dark:hidden"
-          width="160"
-          height="29"
-          loading="eager"
-        />
-        <Image
-          src="/assets/logo/logo_dark.svg"
-          alt="Logo Dark"
-          class="hidden dark:block"
-          width="160"
-          height="29"
-          loading="eager"
-        />
+        <Image src={LogoLight} alt="Logo Light" class="block w-40 dark:hidden" loading="eager" />
+        <Image src={LogoDark} alt="Logo Dark" class="hidden w-40 dark:block" loading="eager" />
       </a>
     </div>
 
