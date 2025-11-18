@@ -45,17 +45,17 @@ const postsLoop = sortedPosts.slice(start, end).map(post => {
 {
   postsLoop.map(post => {
     return (
-      <div
-        class="group relative rounded-2xl border border-dashed border-transparent p-4"
-        onclick={`location.href = '${post.link}'`}
+      <a
+        href={post.link}
+        class="group relative block rounded-2xl border border-dashed border-transparent p-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 dark:focus-visible:ring-neutral-100"
       >
         <div class="absolute inset-0 z-20 h-full w-full rounded-2xl border border-dashed border-neutral-300 bg-white duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 dark:border-neutral-700 dark:bg-neutral-900" />
         <div class="absolute inset-0 z-10 h-full w-full rounded-2xl border border-dashed border-neutral-300 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 dark:border-neutral-700" />
         <div class="relative z-30 cursor-pointer duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
           <h2 class="mb-3 flex items-center dark:text-neutral-100">
-            <a href={post.link} class="text-base font-bold tracking-tight sm:text-lg">
+            <span class="text-base font-bold tracking-tight sm:text-lg">
               {post.title}
-            </a>
+            </span>
           </h2>
           <p class="text-sm text-neutral-600 dark:text-neutral-400">
             <span>{post.description}</span>
@@ -64,7 +64,7 @@ const postsLoop = sortedPosts.slice(start, end).map(post => {
             {post.dateFormatted}
           </div>
         </div>
-      </div>
+      </a>
     )
   })
 }
