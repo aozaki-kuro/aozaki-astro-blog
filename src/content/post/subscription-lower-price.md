@@ -9,20 +9,20 @@ image: https://img.aozaki.cc/twitter-card.jpg
 
 主打一个能省则省。
 
-| App                       | 价格       | 周期 |
-| ------------------------- | ---------- | ---- |
-| YouTube Premium Family    | 2800 NGN   | 月   |
-| 1Password                 | 219 TRY    | 年   |
-| Office 365                | 23.99 TRY  | 月   |
-| Dropbox Professional (3T) | 699.99 TRY | 年   |
-| Fastmail                  | 69.99 TRY  | 月   |
-| Pixiv                     | 164.99TRY  | 年   |
-| Telegram Premium          | 990 TRY    | 年   |
-| ChatGPT                   | 9900 NGN   | 月   |
-| Discord Nitro             | 38900 NGN  | 年   |
-| Spark                     | 27900 NGN  | 年   |
-| Surge 功能订阅            | 7900 NGN   | 年   |
-| 用药助手                  | 17900 NGN  | 年   |
+| App                       | 价格       | 周期 | 渠道     |
+| ------------------------- | ---------- | ---- | -------- |
+| YouTube Premium Family    | 2200 NGN   | 月   | AppStore |
+| 1Password                 | 219 TRY    | 年   | AppStore |
+| Office 365                | 23.99 TRY  | 月   | AppStore |
+| Dropbox Professional (3T) | 699.99 TRY | 年   | AppStore |
+| Fastmail                  | 69.99 TRY  | 月   | AppStore |
+| Pixiv                     | 164.99TRY  | 年   | AppStore |
+| Telegram Premium          | 990 TRY    | 年   | AppStore |
+| ChatGPT                   | 9900 NGN   | 月   | AppStore |
+| Discord Nitro             | 38900 NGN  | 年   | AppStore |
+| Spark                     | 27900 NGN  | 年   | AppStore |
+| Surge 功能订阅            | 7900 NGN   | 年   | AppStore |
+| 用药助手                  | 17900 NGN  | 年   | AppStore |
 
 <ol class="text-sm">
 <li>价格为截至发布日时商店显示的价格，请以实际为准。</li>
